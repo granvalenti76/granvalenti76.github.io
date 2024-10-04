@@ -6,7 +6,7 @@ layout: page
  <img class="image" src="{{ site.url }}/{{ site.picture }}" alt="Alt Text">
 
 ## About Me
-I am a freelance character artist and digital sculptor. You can contact me at this address: <strong>luca at granvalenti.art</strong>
+Thanks for visiting my site,I am a freelance character artist and digital sculptor. You can contact me at this address: <strong>luca at granvalenti.art</strong>
 
 <p>
 <h2>Skills</h2>
