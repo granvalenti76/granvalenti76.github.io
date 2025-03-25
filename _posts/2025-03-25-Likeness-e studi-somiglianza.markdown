@@ -2,8 +2,8 @@
 title: "Likeness and Similarity Studies"
 layout: post
 date: 2025-03-24 
-image: 
-headerImage: false
+image: image: /assets/images/header-jack.jpg
+headerImage: true
 tag:
   - blender  
   - sculpting  
