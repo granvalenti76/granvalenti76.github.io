@@ -21,7 +21,7 @@ description: My personal approach to sculpting famous faces
 <meta property="og:type" content="website">
 <meta property="og:title" content="Likeness and Similarity Studies">
 <meta property="og:description" content="My personal approach to sculpting famous faces">
-<meta property="og:image" content="https://granvalenti.arthttps:/granvalenti76.github.io/assets/images/header-jack.jpg">
+<meta property="og:image" content="https://granvalenti.art/assets/images/header-jack.jpg">
 
 <!-- Twitter Meta Tags -->
 <meta name="twitter:card" content="summary_large_image">
@@ -29,7 +29,7 @@ description: My personal approach to sculpting famous faces
 <meta property="twitter:url" content="https://granvalenti.art/Likeness-e-studi-somiglianza/">
 <meta name="twitter:title" content="Likeness and Similarity Studies">
 <meta name="twitter:description" content="My personal approach to sculpting famous faces">
-<meta name="twitter:image" content="https://granvalenti.arthttps:/granvalenti76.github.io/assets/images/header-jack.jpg">
+<meta name="twitter:image" content="https://granvalenti.art/assets/images/header-jack.jpg">
 
 <!-- Meta Tags Generated via https://www.opengraph.xyz -->
 ## How I Approach Likeness Studies  
