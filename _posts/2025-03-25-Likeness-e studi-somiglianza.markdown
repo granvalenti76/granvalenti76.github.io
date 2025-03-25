@@ -13,7 +13,25 @@ category: blog
 author: granvalenti
 description: My personal approach to sculpting famous faces
 ---
+<!-- HTML Meta Tags -->
+<meta name="description" content="My personal approach to sculpting famous faces">
 
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://granvalenti.art/Likeness-e-studi-somiglianza/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Likeness and Similarity Studies">
+<meta property="og:description" content="My personal approach to sculpting famous faces">
+<meta property="og:image" content="https://granvalenti.arthttps:/granvalenti76.github.io/assets/images/header-jack.jpg">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="granvalenti.art">
+<meta property="twitter:url" content="https://granvalenti.art/Likeness-e-studi-somiglianza/">
+<meta name="twitter:title" content="Likeness and Similarity Studies">
+<meta name="twitter:description" content="My personal approach to sculpting famous faces">
+<meta name="twitter:image" content="https://granvalenti.arthttps:/granvalenti76.github.io/assets/images/header-jack.jpg">
+
+<!-- Meta Tags Generated via https://www.opengraph.xyz -->
 ## How I Approach Likeness Studies  
 
 <span style="font-size: 3em; font-weight: bold;">O</span> ne of the aspects that fascinates me the most in digital sculpting is creating faces that resemble famous people.  
