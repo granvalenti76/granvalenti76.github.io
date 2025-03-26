@@ -37,7 +37,7 @@ description: My personal approach to sculpting famous faces
 <span style="font-size: 3em; font-weight: bold;">O</span> ne of the aspects that fascinates me the most in digital sculpting is creating faces that resemble famous people.  
 Like many others, I started by following courses, drawing inspiration from other artists, and experimenting with different approaches until I developed my own personal method.  
 It’s not a strictly replicable process since every artist has their own way of tackling such a project, influenced by their experience and personal inclinations.  
-![6.jpg](/assets/images/6.jpg)
+![6.jpg](/assets/images/7.jpg)
 
 
 ### The Initial Approach  
