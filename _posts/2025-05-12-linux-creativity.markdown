@@ -32,7 +32,7 @@ I’m a 3D modeler by trade, specialized in organic forms and character design. 
 
 Over time, it’s easy to fall into a rigid system based on competition, branding, and psychological alignment to the “industry mindset”—something not everyone wants or even needs to cultivate.
 
-Luckily, we’re not all the same. Personally, I’ve always seen myself as an outsider—and I’m proud of it. I’ve done many jobs, learned mostly as an autodidact (with a few early courses), and that flexibility has shaped how I work. The world of content creation is big enough to include those of us who don’t feel “inside the loop.” If you’re good, persistent, and strategic, you *can* find your own way.
+Luckily, we’re not all the same. Personally, I’ve always seen myself as an outsider—and I’m proud of it. I’ve done many jobs, learned mostly as self taught (with a few early courses), and that flexibility has shaped how I work. The world of content creation is big enough to include those of us who don’t feel “inside the loop.” If you’re good, persistent, and strategic, you *can* find your own way.
 
 So, doing 3D art on Linux? Not only possible—it's genuinely advantageous. Yet the idea still gets strange looks.
 
