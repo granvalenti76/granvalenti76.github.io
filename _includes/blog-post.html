@@ -2,5 +2,11 @@
     <a class="url" href="{{ site.url }}{{ post.url }}">
         <aside class="date"><time datetime="{{ post.date | date:"%d-%m-%Y" }}">{{ post.date | date: "%b %d %Y" }}</time></aside>
         <h3 class="title">{{ post.title }}</h3>
+        <div class="post-content">
+            <p class="excerpt">{{ post.content | strip_html | truncate: 150 }}</p>
+            {% if post.image %}
+                <img src="{{ post.image }}" alt="{{ post.title }}" class="post-image" />
+            {% endif %}
+        </div>
     </a>
 </div>
