@@ -1,58 +1,107 @@
 [
-    {
-        "Id": 1,
-        "Title": "Game of Thrones",
-        "Summary": "Seven noble families fight for control of the mythical land of Westeros. Friction between the houses leads to full-scale war. All while a very ancient evil awakens in the farthest north. Amidst the war, a neglected military order of misfits, the Night's Watch, is all that stands between the realms of men and the icy horrors beyond.",
-        "Poster": "https://artworks.thetvdb.com/banners/posters/121361-4.jpg",
-        "Seasons": 8
-    },
-    {
-        "Id": 2,
-        "Title": "House of The dragon",
-        "Summary": "The story of House Targaryen, 200 years before the events of Game of Thrones.",
-        "Poster": "https://artworks.thetvdb.com/banners/v4/series/371572/posters/6314b92a64a1f.jpg",
-        "Seasons": 3
-    },
-    {
-        "Id": 3,
-        "Title": "The Pitt",
-        "Summary": "The staff of Pittsburgh's Trauma Medical Center work around the clock to save lives in an overcrowded and underfunded emergency department.",
-        "Poster": "https://artworks.thetvdb.com/banners/v4/series/448176/posters/6941c7b719bbb.jpg",
-        "Seasons": 2
-    },
-    {
-        "Id": 4,
-        "Title": "Industry",
-        "Summary": "In the cutthroat world of international finance, a group of young graduates compete for a limited set of permanent positions at a top investment bank in London. The boundaries between colleague, friend, lover, and enemy soon blur as they immerse themselves in a company culture defined as much by sex, drugs and ego as it is by deals and dividends.",
-        "Poster": "https://artworks.thetvdb.com/banners/v4/series/371796/posters/62e31c5d1d88a.jpg",
-        "Seasons": 5
-    },
-    {
-        "Id": 5,
-        "Title": "A Knight Of Seven Kingdom",
-        "Summary": "A century before the events of Game of Thrones, two unlikely heroes wandered Westeros: a young, naive but courageous knight, Ser Duncan the Tall, and his diminutive squire, Egg. Set in an age when the Targaryen line still holds the Iron Throne and the last dragon has not yet passed from living memory, great destinies, powerful foes, and dangerous exploits await these improbable and incomparable friends.",
-        "Poster": "https://artworks.thetvdb.com/banners/v4/series/433631/posters/6934ab30720ee.jpg",
-        "Seasons": 1
-    },
-    {
-        "Id": 6,
-        "Title": "True Blood",
-        "Summary": "Sookie Stackhouse is a small-town Louisiana waitress who works at Merlotte's; she has a secret: she's telepathic. Sookie's world is turned upside down when the supernatural world is finally revealed to the mortal world when she meets the mysterious Bill Compton, a southern Louisiana gentleman and vampire.",
-        "Poster": "https://artworks.thetvdb.com/banners/posters/82283-1.jpg",
-        "Seasons": 7
-    },
-    {
-        "Id": 7,
-        "Title": "The Gilded Age",
-        "Summary": "The American Gilded Age was a period of immense economic change, of great conflict between the old ways and brand-new systems, and of huge fortunes made and lost. Against the backdrop of this transformation, young Marian Brook moves from rural Pennsylvania to New York City after the death of her father to live with her thoroughly old-money aunts. Accompanied by Peggy Scott, an aspiring writer seeking a fresh start, Marian inadvertently becomes enmeshed in a social war, between one of her aunts, a scion of the old-money set, and her stupendously rich neighbors, a ruthless railroad tycoon and his ambitious wife. Exposed to a world on the brink of the modern age, will Marian follow the established rules of society, or forge her own path?",
-        "Poster": "https://artworks.thetvdb.com/banners/v4/series/364412/posters/65651a1731c53.jpg",
-        "Seasons": 3
-    },
-    {
-        "Id": 8,
-        "Title": "His Dark Materials",
-        "Summary": "In an alternative world where all humans have animal companions called dæmons, which are the manifestation of the human soul, a young orphan living with the tutors at Jordan College, Oxford discovers a dangerous secret that involves Lord Asriel and Marisa Coulter. In her search for her missing friend, she uncovers a slew of kidnappings and its link to the mysterious substance called Dust.",
-        "Poster": "https://artworks.thetvdb.com/banners/series/360295/posters/5f8490b855f99.jpg",
-        "Seasons": 3
-    }
+  {
+    "Id": "1",
+    "Title": "Game of Thrones",
+    "Summary": "Seven noble families fight for control of the mythical land of Westeros. Friction between the houses leads to full-scale war. All while a very ancient evil awakens in the farthest north. Amidst the war, a neglected military order of misfits, the Night's Watch, is all that stands between the realms of men and the icy horrors beyond.",
+    "Poster": "https://artworks.thetvdb.com/banners/posters/121361-4.jpg",
+    "Seasons": "8"
+  },
+  {
+    "Id": "2",
+    "Title": "House of The dragon",
+    "Summary": "The story of House Targaryen, 200 years before the events of Game of Thrones.",
+    "Poster": "https://artworks.thetvdb.com/banners/v4/series/371572/posters/6314b92a64a1f.jpg",
+    "Seasons": "3"
+  },
+  {
+    "Id": "3",
+    "Title": "The Pitt",
+    "Summary": "The staff of Pittsburgh's Trauma Medical Center work around the clock to save lives in an overcrowded and underfunded emergency department.",
+    "Poster": "https://artworks.thetvdb.com/banners/v4/series/448176/posters/6941c7b719bbb.jpg",
+    "Seasons": "2"
+  },
+  {
+    "Id": "4",
+    "Title": "Industry",
+    "Summary": "In the cutthroat world of international finance, a group of young graduates compete for a limited set of permanent positions at a top investment bank in London. The boundaries between colleague, friend, lover, and enemy soon blur as they immerse themselves in a company culture defined as much by sex, drugs and ego as it is by deals and dividends.",
+    "Poster": "https://artworks.thetvdb.com/banners/v4/series/371796/posters/62e31c5d1d88a.jpg",
+    "Seasons": "5"
+  },
+  {
+    "Id": "5",
+    "Title": "A Knight Of Seven Kingdom",
+    "Summary": "A century before the events of Game of Thrones, two unlikely heroes wandered Westeros: a young, naive but courageous knight, Ser Duncan the Tall, and his diminutive squire, Egg. Set in an age when the Targaryen line still holds the Iron Throne and the last dragon has not yet passed from living memory, great destinies, powerful foes, and dangerous exploits await these improbable and incomparable friends.",
+    "Poster": "https://artworks.thetvdb.com/banners/v4/series/433631/posters/6934ab30720ee.jpg",
+    "Seasons": "1"
+  },
+  {
+    "Id": "6",
+    "Title": "True Blood",
+    "Summary": "Telepathic waitress Sookie Stackhouse encounters a strange new supernatural world when she meets the mysterious Bill Compton, a southern Louisiana gentleman and vampire.",
+    "Poster": "https://artworks.thetvdb.com/banners/posters/82283-1.jpg",
+    "Seasons": "7"
+  },
+  {
+    "Id": "7",
+    "Title": "The Gilded Age",
+    "Summary": "The American Gilded Age was a period of immense economic change, of great conflict between the old ways and brand-new systems, and of huge fortunes made and lost. Against the backdrop of this transformation, young Marian Brook moves from rural Pennsylvania to New York City after the death of her father to live with her thoroughly old-money aunts. Accompanied by Peggy Scott, an aspiring writer seeking a fresh start, Marian inadvertently becomes enmeshed in a social war, between one of her aunts, a scion of the old-money set, and her stupendously rich neighbors, a ruthless railroad tycoon and his ambitious wife. Exposed to a world on the brink of the modern age, will Marian follow the established rules of society, or forge her own path?",
+    "Poster": "https://artworks.thetvdb.com/banners/v4/series/364412/posters/65651a1731c53.jpg",
+    "Seasons": "3"
+  },
+  {
+    "Id": "8",
+    "Title": "His Dark Materials",
+    "Summary": "In an alternative world where all humans have animal companions called d\u00e6mons, which are the manifestation of the human soul, a young orphan living with the tutors at Jordan College, Oxford discovers a dangerous secret that involves Lord Asriel and Marisa Coulter. In her search for her missing friend, she uncovers a slew of kidnappings and its link to the mysterious substance called Dust.",
+    "Poster": "https://www.themoviedb.org/t/p/w1280/68QaCYKD688SBwaNbX5CZa9NPjf.jpg",
+    "Seasons": "3"
+  },
+  {
+    "Id": "9",
+    "Title": "The Wire",
+    "Summary": "La trama dell'opera \u00e8 basata sulla lotta tra una speciale unit\u00e0 di polizia e una potente banda che controlla il traffico di stupefacenti. La particolarit\u00e0 e l'innovazione della serie sta, oltre che nell'accurato realismo dei personaggi, siano essi poliziotti o membri delle gang, nel narrare passo dopo passo l'indagine di polizia, dalla nascita all'evolversi fino alla conclusione.",
+    "Poster": "https://www.themoviedb.org/t/p/w1280/4lbclFySvugI51fwsyxBTOm4DqK.jpg",
+    "Seasons": "5"
+  },
+  {
+    "Id": "10",
+    "Title": "Dune: prophecy",
+    "Summary": "Ambientata 10.000 anni prima degli eventi di Dune, la serie segue le sorelle Valya e Tula Harkonnen mentre combattono le forze che minacciano il futuro dell'umanit\u00e0 e fondano la mitica setta conosciuta come Bene Gesserit.",
+    "Poster": "https://www.themoviedb.org/t/p/w1280/kXOeIhWmwFe1aSrdOwbDFwWc61n.jpg",
+    "Seasons": "1"
+  },
+  {
+    "Id": "11",
+    "Title": "Task",
+    "Summary": "Nella periferia operaia di Philadelphia, un agente dell'FBI dirige una task force per porre fine a una serie di violente rapine compiute da un insospettabile padre di famiglia.",
+    "Poster": "https://www.themoviedb.org/t/p/w1280/9JdL1aQdAQiyYYQ2xCqbHaEcZt8.jpg",
+    "Seasons": "1"
+  },
+  {
+    "Id": "12",
+    "Title": "Peacemaker",
+    "Summary": "Christopher Smith, alias Peacemaker, \u00e8 un vigilante vanaglorioso che insegue la pace a ogni costo e con ogni mezzo, senza riguardo per quante persone deve uccidere per raggiungere il suo obiettivo.",
+    "Poster": "https://www.themoviedb.org/t/p/w1280/eYzbGcYnOUlvj2fa76pTgIXogd7.jpg",
+    "Seasons": "2"
+  },
+  {
+    "Id": "13",
+    "Title": "The Leftovers",
+    "Summary": "Un giorno di ottobre, improvvisamente, il 2% della popolazione mondiale (140 milioni di persone) scompare in un solo istante. Alcuni si convincono che la Terra sia stata colpita dal \"Rapimento della Chiesa\", altri rifiutano di vederlo come un evento mistico, e nessuno, in realt\u00e0, sa veramente cosa sia accaduto. La serie ha inizio tre anni dopo l'evento, e segue le vicende della comunit\u00e0 di Mapleton, dove sono scomparsi nel nulla oltre cento abitanti.",
+    "Poster": "https://www.themoviedb.org/t/p/w1280/i4bBwRrJc0xKUm88fIxjhAehd0X.jpg",
+    "Seasons": "3"
+  },
+  {
+    "Id": "14",
+    "Title": "Succession",
+    "Summary": "Creata da Jesse Armstrong, la pluripremiata serie sulle vicende dell'anziano proprietario di un impero delle comunicazioni, che deve decidere a chi lasciare la sua eredit\u00e0.",
+    "Poster": "https://www.themoviedb.org/t/p/w1280/z0XiwdrCQ9yVIr4O0pxzaAYRxdW.jpg",
+    "Seasons": "4"
+  },
+  {
+    "Id": "15",
+    "Title": "I Soprano",
+    "Summary": "La famiglia Soprano, i cui avi italiani sono originari di Avellino, vanta importanti contatti con le cosche newyorkesi e mantiene relazioni affaristiche con la Camorra napoletana. Il boss \u00e8 soggetto ad attacchi di panico che lo portano sul lettino di una psicoanalista, alla quale confida ben presto i suoi turbamenti legati alla famiglia, in particolare nel rapporto col terribile personaggio della madre Livia: i suoi guai per\u00f2 passano anche attraverso il complesso legame con la moglie Carmela (connivente ma estranea alle imprese criminali del marito), i figli adolescenti, lo zio (fratello del padre) che non lo considera come boss e lo contrasta in ogni modo. A questi problemi personali si aggiungono quelli \"lavorativi\", in cui Tony deve destreggiarsi fra l'FBI, traditori della sua stessa famiglia e boss in ascesa di famiglie rivali.",
+    "Poster": "https://www.themoviedb.org/t/p/w1280/7tsJV3jjjGr70eh3WSOLXj8Z65A.jpg",
+    "Seasons": "6"
+  }
 ]
