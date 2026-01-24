@@ -103,5 +103,29 @@
     "Summary": "\"La famiglia Soprano, i cui avi italiani sono originari di Avellino, vanta importanti contatti con le cosche newyorkesi e mantiene relazioni affaristiche con la Camorra napoletana. Il boss è soggetto ad attacchi di panico che lo portano sul lettino di una psicoanalista, alla quale confida ben presto i suoi turbamenti legati alla famiglia, in particolare nel rapporto col terribile personaggio della madre Livia: i suoi guai però passano anche attraverso il complesso legame con la moglie Carmela (connivente ma estranea alle imprese criminali del marito), i figli adolescenti, lo zio (fratello del padre) che non lo considera come boss e lo contrasta in ogni modo. A questi problemi personali si aggiungono quelli \"\"lavorativi\"\", in cui Tony deve destreggiarsi fra l'FBI, traditori della sua stessa famiglia e boss in ascesa di famiglie rivali.\"",
     "Poster": "https://www.themoviedb.org/t/p/w1280/7tsJV3jjjGr70eh3WSOLXj8Z65A.jpg",
     "Seasons": 6
+  },
+  {
+    "Id": 16,
+    "Title": "Lost",
+    "Summary": "48 persone sopravvivono ad un tremendo disastro aereo e si ritrovano dispersi su un'isola dell'Oceano Pacifico che sembra completamente disabitata. Ognuno di loro ha una sua storia, ognuno di loro nasconde dei segreti. Ma tutti quanti sono consapevoli che, se vogliono continuare a vivere, debbono collaborare, superare le avversità e le divisioni personali e sperare in un soccorso che potrebbe anche non arrivare mai. Il gruppo, mentre affronta l'inclemenza del tempo e l'ambiente ostile, scopre, con il passare del tempo, che anche l'isola nasconde dei segreti.",
+    "Poster": "https://www.themoviedb.org/t/p/w1280/og6S0aTZU6YUJAbqxeKjCa3kY1E.jpg",
+    "Seasons": 6
+  },
+  {
+    "Id": 17,
+    "Title": "X-files",
+    "Summary": "\"X-Files è una serie fantascientifica americana che descrive la riapertura dei casi irrisolti e dimenticati in archivio perchè collegati a fenomeni paranormali da parte dei due investigatori del FBI Fox Mulder e Dana Scully."
+  },
+  {
+    "Id": "\"",
+    "Title": "https://www.themoviedb.org/t/p/w1280/wwbrEfxeBcH7GYIgrGVGvg8Gw6U.jpg",
+    "Summary": 11
+  },
+  {
+    "Id": 18,
+    "Title": "Downton Abbey",
+    "Summary": "Downton Abbey è la signorile dimora dei conti di Grantham. Qui, durante il regno di Giorgio V, vivono la famiglia aristocratica dei Crawley e i loro numerosi dipendenti",
+    "Poster": "https://www.themoviedb.org/t/p/w1280/7HgDYRYjym4BwbhKaqTQq771SKb.jpg",
+    "Seasons": 6
   }
 ]
