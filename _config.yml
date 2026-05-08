@@ -40,7 +40,7 @@ disqus:
 linkedin: granvalenti
 artstation: lucat
 mastodon: granvalenti
-#github: mygithub
+github: granvalenti76
 email: luca@granvalenti.art
 
 authors:
@@ -50,6 +50,7 @@ authors:
     external-image: false
     picture: /assets/images/profile.jpg
     instagram: granvalenti
+    github: granvalenti
   jamesfoster:
     name: James Foster
     bio: A Man who develops software with coffee
