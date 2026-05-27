@@ -8,6 +8,7 @@ tag:
 - adhd
 - personal
 - personal development
+featured: true
 star: false
 category: blog
 author: granvalenti
@@ -22,7 +23,7 @@ For over twenty years I've worked as a character artist, but my interests have a
 
 ## The Switch to macOS
 
-A month ago I purchased a brand new MacBook Air M4 with 16 GB. After years of working on Windows and numerous experiments with Linux — which gave me great satisfaction for some self-hosted projects like Mastodon and PixelFed — I felt the need to simplify.
+A month ago I purchased a brand new MacBook Air M4 with 16 GB. After years of working on Windows and performing numerous experiments with Linux — which gave me great satisfaction for some self-hosted projects like Mastodon and PixelFed — I felt the need to simplify.
 
 I no longer want to spend hours searching for documentation to make every single thing work. Today I simply want a stable POSIX/Unix system with a well-designed and coherent graphical interface. The choice fell on Apple for practical rather than ideological reasons.
 

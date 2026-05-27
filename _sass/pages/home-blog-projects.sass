@@ -1,74 +1,255 @@
-.home,
-.blog,
-.projects
-    margin-top: 125px
+/* Azzera margin-top ereditato da .page (125px) */
+.page.blog
+    margin-top: 0
 
-    > .list
-        border-top: 1px solid $epsilon
-        margin-top: 30px
-        padding-top: 40px
-        position: relative
+/* Allarga il wrapper solo quando contiene la pagina blog */
+.wrapper-normal:has(> .page.blog),
+.wrapper-large:has(> .page.blog)
+    max-width: 1200px
 
-        &:before
-            display: block
-            content: " "
-            width: 7px
-            height: 7px
-            border: $epsilon 1px solid
-            position: absolute
-            top: -5px
-            left: 50%
-            margin-left: -5px
-            background: $omega
-            box-shadow: $omega 0 0 0 5px
-            border-radius: 3px
+/* Magazine Layout */
+.magazine-layout
+    font-family: $fontSans
+    color: $beta
+    padding: 40px 20px
 
-.home > .list,
-.blog > .list,
-.projects > .list
-    > .item
-        display: block
-        width: 95%
-        margin: 0 auto
+/* Main Grid - colonna unica, niente sidebar */
+.main-grid
+    display: block
 
-    > .item > .url
-        width: 100%
-        display: block
-        padding: 20px 0
+/* Hero Section */
+.hero-section
+    margin: 40px 0
+    padding: 0
+    border-radius: 12px
+    overflow: hidden
+
+.hero-container
+    display: flex
+    flex-direction: row
+    gap: 40px
+    align-items: center
+
+.hero-article
+    flex: 1
+    position: relative
+    padding: 0
+
+    > a
+        display: flex
+        flex-direction: row
+        align-items: center
+        gap: 30px
         text-decoration: none
+        color: inherit
 
-    > .item > .url > .title
-        margin: 0
-        width: 75%
-        font-weight: 500
-        transition: all ease-in-out .2s
+        &:hover
+            .hero-title
+                text-decoration: underline
 
-    > .item:hover > .url > .title
-        color: $delta
+.hero-image
+    width: 45%
+    max-height: 300px
+    height: auto
+    object-fit: contain
+    border-radius: 6px
+    display: block
+    flex-shrink: 0
 
-    // maybe we can't nest html5 elements
-    // can you help me?
-    aside
-        position: relative
-        top: 2px
-        margin: 0
-        width: 25%
-        float: right
+.hero-content
+    flex: 1
+    min-width: 0
+
+.hero-category
+    display: inline-block
+    padding: 4px 12px
+    background: $epsilon
+    color: $alpha
+    font-size: 12px
+    font-weight: 600
+    border-radius: 20px
+    margin-bottom: 12px
+
+.hero-title
+    font-family: $fontSerif
+    font-size: 32px
+    font-weight: 700
+    line-height: 1.2
+    margin: 0 0 12px 0
+    color: $zeta
+
+.hero-excerpt
+    font-family: $fontSerif
+    font-size: 16px
+    line-height: 1.6
+    color: $gama
+    margin: 0 0 16px 0
+
+.hero-meta
+    display: flex
+    gap: 20px
+    font-size: 13px
+    color: $alpha
+
+.read-time
+    font-style: italic
+
+/* Posts Column - full width, niente sidebar */
+
+.column-header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom: 30px
+    padding-bottom: 15px
+    border-bottom: 1px solid $epsilon
+
+.column-title
+    font-family: $fontSans
+    font-size: 13px
+    font-weight: 600
+    margin: 0
+    color: $gama
+    text-transform: uppercase
+    letter-spacing: 1.5px
+
+.posts-list
+    display: flex
+    flex-direction: column
+    gap: 30px
+
+/* Links nel magazine-layout - niente purple, solo underline */
+.magazine-layout a
+    color: $zeta
+    text-decoration: none
+    font-weight: $thin-font
+    transition: color 0.2s ease
+
+    &:hover
+        color: $zeta
+
+/* Blog cards - stile delicato, niente box */
+.blog-card
+    padding: 0 0 24px 0
+    border-bottom: 1px solid $epsilon
+
+    &:last-child
+        border-bottom: none
+
+    .card-link
+        color: $zeta
+        text-decoration: none
+        display: block
+
+        &:hover
+            .card-title
+                text-decoration: underline
+
+    .card-header
+        display: flex
+        align-items: center
+        gap: 12px
+        margin-bottom: 8px
+
+    .card-title
+        font-family: $fontSerif
+        color: $zeta
+        font-size: 20px
         font-weight: 300
-        color: $gama
-        text-align: right
-        transition: all ease-in-out .2s
+        margin: 0 0 6px 0
+        line-height: 1.35
+        transition: all 0.2s ease
 
-    .item:hover .url aside
+    .card-excerpt
+        font-family: $fontSerif
+        color: $gama
+        font-size: 15px
+        line-height: 1.5
+        margin: 0 0 6px 0
+
+    .card-footer
+        display: flex
+        align-items: center
+        gap: 12px
+        font-size: 12px
         color: $alpha
 
-.blog > .list > .item > .url,
-.projects > .list > .item > .url
-    > .title
-        display: inline
+    .card-date,
+    .card-category,
+    .card-read-time
+        font-family: $fontSans
+        color: $alpha
+        font-size: 11px
+        text-transform: uppercase
+        letter-spacing: 0.5px
 
-    > .emoji
-        display: inline
-        position: relative
-        top: -4px
-        margin-right: 10px
+/* Header nella pagina blog - solo foto + social, in flow */
+.page.blog .header-home
+    text-align: left
+    margin: 0 0 30px 0
+    padding: 0
+    display: block
+    position: relative
+
+    .selfie
+        width: 60px
+        height: 60px
+        margin: 0 0 10px 0
+        border-radius: 50%
+        display: block
+
+    .title,
+    .description
+        display: none
+
+    .social-links
+        display: flex
+        justify-content: flex-start
+        gap: 8px
+        margin: 0
+
+        > .link
+            width: 30px
+            height: 30px
+            font-size: 1rem
+            margin: 0
+            display: flex
+            align-items: center
+            justify-content: center
+            color: $gama
+
+            &:hover
+                color: $zeta
+
+/* Responsive */
+@media (max-width: 900px)
+    .magazine-layout
+        padding: 20px 15px
+
+    .hero-container
+        flex-direction: column
+        gap: 25px
+
+    .hero-article > a
+        flex-direction: column
+
+    .hero-image
+        width: 100%
+        max-height: 250px
+
+@media (max-width: 600px)
+    .hero-image
+        max-height: 250px
+
+    .hero-title
+        font-size: 26px
+
+    .hero-content
+        padding-top: 15px
+
+    .column-title
+        font-size: 12px
+
+    .page.blog .header-home .selfie
+        width: 48px
+        height: 48px
