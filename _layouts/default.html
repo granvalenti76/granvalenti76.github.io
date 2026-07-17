@@ -42,9 +42,11 @@ layout: compress
 <meta name="fediverse:creator" content="@granvalenti@mastodon.social" />
 </head>
 <body>
-    <div class="wrapper-{% if site.width == "normal" %}normal{% elsif site.width == "large" %}large{% endif %}">
+    <div class="{% if page.layout == "project" %}wrapper-project{% else %}wrapper-{% if site.width == "normal" %}normal{% elsif site.width == "large" %}large{% endif %}{% endif %}">
         {% if page.layout == "post" %}
             <div class="post">
+        {% elsif page.layout == "project" %}
+            <div class="project-product">
         {% else %}
             {% if showHeader != true %}
                 <div class="page {{ page.title | downcase }}">

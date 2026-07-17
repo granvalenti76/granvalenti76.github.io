@@ -1,4 +1,6 @@
 _site/
 .sass-cache/
+.DS_Store
+AGENTS.md
 drafts/
 SKILL_JEKYLL_ARTICLES.md

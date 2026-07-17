@@ -118,8 +118,16 @@ compress_html:
 exclude:
   [
     "README.md",
+    "AGENTS.md",
     "Gemfile",
     "Gemfile.lock",
     "FAQ.md",
+    "CONTRIBUTION.md",
+    "SKILL_JEKYLL_ARTICLES.md",
+    "docker-compose.yml",
+    "drafts",
+    "index.html.bak",
+    ".DS_Store",
+    ".sass-cache",
     "vendor",
   ]

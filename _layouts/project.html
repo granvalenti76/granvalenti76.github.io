@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<header class="product-nav">
+  <a class="product-nav__brand" href="{{ site.url }}/turbocode/">
+    <span class="product-logo product-logo--nav" aria-hidden="true">
+      <img src="/assets/images/turbocode-logo-provisional.png" alt="">
+    </span>
+    <span>TurboCode</span>
+  </a>
+  <span class="product-nav__note">A small open-source Swift experiment</span>
+  <nav aria-label="TurboCode navigation">
+    <a href="{{ site.url }}/">Home</a>
+    <a href="#capabilities">What works</a>
+    <a href="#docs">Setup</a>
+    <a href="#status">Status</a>
+    <a href="{{ site.url }}/projects/">Projects</a>
+  </nav>
+</header>
+
+<main class="product-main">
+  {{ content }}
+</main>
+
+<footer class="product-footer">
+  <div>
+    <strong>TurboCode</strong>
+    <span>A personal open-source project for macOS</span>
+  </div>
+  <a href="#top">Back to top ↑</a>
+</footer>

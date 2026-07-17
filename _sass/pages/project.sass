@@ -1,0 +1,638 @@
+.wrapper-project
+    background: #eef2f4
+    color: #17212b
+    min-height: 100%
+    overflow: hidden
+    width: 100%
+
+.project-product
+    --project-bg: #eef2f4
+    --project-paper: #ffffff
+    --project-ink: #17212b
+    --project-muted: #61707c
+    --project-line: #d6dde2
+    --project-line-strong: #b9c4cc
+    --project-blue: #1768e5
+    --project-blue-soft: #e6efff
+    --project-teal: #14786f
+    --project-teal-soft: #e3f2ef
+    --project-orange: #db6134
+    background: var(--project-bg)
+    color: var(--project-ink)
+    min-height: 100vh
+
+    *,
+    *::before,
+    *::after
+        box-sizing: border-box
+
+    h1,
+    h2,
+    h3,
+    p
+        letter-spacing: -.012em
+
+    h1,
+    h2,
+    h3
+        color: var(--project-ink)
+
+    p
+        color: var(--project-muted)
+
+    figure
+        margin: 0
+
+    figcaption
+        color: var(--project-muted)
+        font-size: 1.15rem
+        margin-top: 1.2rem
+        position: static
+        text-align: left
+
+    img
+        border-radius: 0
+
+.product-nav,
+.product-footer
+    margin: 0 auto
+    max-width: 1440px
+    padding: 1.8rem 4rem
+
+.product-nav
+    align-items: center
+    background: rgba(255, 255, 255, .78)
+    border: 1px solid var(--project-line)
+    border-radius: 14px
+    display: grid
+    grid-template-columns: 1fr auto 1fr
+    position: relative
+    top: 1.6rem
+
+    a
+        color: var(--project-ink)
+        font-size: 1.2rem
+        text-decoration: none
+
+        &:hover
+            color: var(--project-blue)
+
+    > .product-nav__brand
+        align-items: center
+        display: inline-flex
+        font-size: 1.6rem
+        font-weight: 700
+        gap: 1rem
+        justify-self: start
+
+    > .product-nav__note
+        color: var(--project-muted)
+        font-family: $fontMonospace
+        font-size: 1rem
+        letter-spacing: .03em
+
+    > nav
+        align-items: center
+        display: flex
+        gap: 2rem
+        justify-self: end
+
+.product-main
+    margin: 0 auto
+    max-width: 1440px
+    padding: 0 4rem
+
+.product-logo
+    background: var(--project-paper)
+    border: 1px solid var(--project-line)
+    display: inline-block
+    flex: 0 0 auto
+    overflow: hidden
+    position: relative
+
+    > img
+        border-radius: 0
+        left: -26%
+        max-width: none
+        position: absolute
+        top: -16%
+        width: 145%
+
+.product-logo--nav
+    border-radius: 9px
+    height: 3.2rem
+    width: 3.2rem
+
+.product-logo--hero
+    border-radius: 18px
+    box-shadow: 0 12px 35px rgba(23, 33, 43, .12)
+    height: 7.6rem
+    margin-bottom: 3.5rem
+    width: 7.6rem
+
+.product-hero
+    display: grid
+    gap: 7rem
+    grid-template-columns: 1fr
+    padding: 12rem 0 11rem
+
+.product-eyebrow,
+.product-index
+    color: var(--project-blue) !important
+    font-family: $fontMonospace
+    font-size: 1.05rem
+    font-weight: 600
+    letter-spacing: .06em !important
+    margin: 0 0 2rem
+    text-transform: uppercase
+
+.product-hero__copy
+    max-width: 980px
+
+    > h1
+        font-size: clamp(5rem, 6vw, 7.4rem)
+        font-weight: 650
+        line-height: 1
+        margin: 0 0 3rem
+        max-width: 900px
+
+    > .product-hero__lead
+        font-size: 1.8rem
+        line-height: 1.7
+        margin-bottom: 3rem
+        max-width: 770px
+
+.product-actions
+    display: flex
+    flex-wrap: wrap
+    gap: 1rem
+
+.product-button
+    align-items: center
+    background: var(--project-paper)
+    border: 1px solid var(--project-line-strong)
+    border-radius: 9px
+    color: var(--project-ink)
+    display: inline-flex
+    font-size: 1.25rem
+    font-weight: 600
+    justify-content: center
+    padding: 1.15rem 1.7rem
+    text-decoration: none
+
+    &:hover
+        border-color: var(--project-blue)
+
+    &.product-button--primary
+        background: var(--project-blue)
+        border-color: var(--project-blue)
+        color: #fff
+
+.product-facts
+    display: flex
+    flex-wrap: wrap
+    gap: 1rem
+    margin-top: 4rem
+
+    > span
+        background: var(--project-paper)
+        border: 1px solid var(--project-line)
+        border-radius: 999px
+        color: var(--project-muted)
+        font-family: $fontMonospace
+        font-size: 1rem
+        padding: .75rem 1.1rem
+        text-transform: uppercase
+
+.product-hero__visual,
+.product-feature__visual
+    background: var(--project-paper)
+    border: 1px solid var(--project-line)
+    border-radius: 16px
+    box-shadow: 0 18px 55px rgba(23, 33, 43, .09)
+    padding: 1rem
+    position: relative
+
+    > img
+        border: 1px solid var(--project-line)
+        border-radius: 10px
+        display: block
+        width: 100%
+
+    > figcaption
+        padding: 0 .4rem
+
+.product-statement
+    align-items: start
+    background: var(--project-paper)
+    border: 1px solid var(--project-line)
+    border-radius: 16px
+    display: grid
+    gap: 5rem
+    grid-template-columns: 180px 1fr
+    padding: 7rem
+
+    h2
+        font-size: clamp(3.8rem, 5vw, 5.6rem)
+        line-height: 1.05
+        margin: 0 0 2.5rem
+        max-width: 900px
+
+    p:last-child
+        font-size: 1.7rem
+        line-height: 1.7
+        margin: 0
+        max-width: 850px
+
+.product-statement__label
+    border-top: 3px solid var(--project-orange)
+    color: var(--project-muted)
+    font-family: $fontMonospace
+    font-size: 1rem
+    padding-top: 1.3rem
+    text-transform: uppercase
+
+.product-feature
+    border-bottom: 1px solid var(--project-line)
+    display: grid
+    gap: 4.5rem
+    grid-template-columns: 1fr
+    padding: 11rem 0
+
+    > .product-feature__copy
+        display: grid
+        gap: 2rem 6rem
+        grid-template-columns: minmax(300px, .9fr) minmax(300px, 1.1fr)
+
+        > .product-index
+            grid-column: 1 / -1
+            margin-bottom: 0
+
+        > h2
+            font-size: clamp(3.6rem, 4vw, 5rem)
+            line-height: 1.08
+            margin: 0
+
+        > p:not(.product-index)
+            font-size: 1.6rem
+            line-height: 1.7
+            margin: 0
+
+.product-list
+    display: flex
+    flex-wrap: wrap
+    gap: .8rem
+    grid-column: 2
+    list-style: none
+    margin: 1rem 0 0
+    padding: 0
+
+    > li
+        background: var(--project-blue-soft)
+        border-radius: 6px
+        color: #244c85
+        font-size: 1.2rem
+        line-height: 1.4
+        padding: .8rem 1rem
+
+.product-capabilities
+    display: grid
+    gap: 1.5rem
+    grid-template-columns: repeat(3, minmax(0, 1fr))
+    padding: 9rem 0
+
+    > div
+        background: var(--project-paper)
+        border: 1px solid var(--project-line)
+        border-radius: 12px
+        min-height: 285px
+        padding: 3.5rem
+
+        > span
+            color: var(--project-teal)
+            font-family: $fontMonospace
+            font-size: 1rem
+            font-weight: 600
+            text-transform: uppercase
+
+        > h3
+            font-size: 2.5rem
+            margin: 4.5rem 0 1.5rem
+
+        > p
+            font-size: 1.4rem
+            line-height: 1.7
+            margin: 0
+
+.product-docs,
+.product-status
+    border-top: 1px solid var(--project-line)
+    padding: 11rem 0
+
+.product-docs__intro,
+.product-status__intro
+    display: grid
+    gap: 2rem 6rem
+    grid-template-columns: .9fr 1.1fr
+
+    > .product-eyebrow
+        grid-column: 1 / -1
+
+    > h2
+        font-size: clamp(3.8rem, 5vw, 5.6rem)
+        line-height: 1.05
+        margin: 0
+
+    > p:last-child
+        align-self: end
+        font-size: 1.65rem
+        line-height: 1.7
+        margin: 0
+
+        code
+            background: transparent
+            color: var(--project-blue)
+
+.product-docs__grid
+    display: grid
+    gap: 1.5rem
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+    margin-top: 7rem
+
+    > article
+        background: var(--project-paper)
+        border: 1px solid var(--project-line)
+        border-radius: 12px
+        min-height: 280px
+        padding: 3.5rem
+
+        > span
+            color: var(--project-blue)
+            font-family: $fontMonospace
+            font-size: 1rem
+            font-weight: 600
+            text-transform: uppercase
+
+        > h3
+            font-size: 2.4rem
+            margin: 3.5rem 0 1.5rem
+
+        > p
+            font-size: 1.4rem
+            line-height: 1.7
+
+        strong
+            color: var(--project-ink)
+
+        code
+            background: transparent
+            color: var(--project-ink)
+
+        > pre
+            background: #f5f7f8
+            border: 1px solid var(--project-line)
+            border-radius: 7px
+            margin: 1.8rem 0
+            padding: 1.4rem 1.6rem
+
+            > code
+                color: var(--project-teal)
+                font-size: 1.2rem
+
+.product-status
+    background: #f7f9fa
+    border-bottom: 1px solid var(--project-line)
+    margin: 0 calc(50% - 50vw)
+    padding-left: max(4rem, calc((100vw - 1360px) / 2))
+    padding-right: max(4rem, calc((100vw - 1360px) / 2))
+
+.product-status__grid
+    display: grid
+    gap: 1.5rem
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+    margin-top: 6rem
+
+    > article
+        background: var(--project-paper)
+        border: 1px solid var(--project-line)
+        border-radius: 12px
+        padding: 3.5rem
+
+        &:first-child
+            box-shadow: inset 4px 0 0 var(--project-teal)
+
+        &:last-child
+            box-shadow: inset 4px 0 0 #d69a22
+
+        > ul
+            list-style: none
+            margin: 2.5rem 0 0
+            padding: 0
+
+            > li
+                border-top: 1px solid var(--project-line)
+                color: var(--project-ink)
+                font-size: 1.3rem
+                line-height: 1.5
+                padding: 1.2rem 0
+
+.product-status__label
+    color: #a36d0c
+    font-family: $fontMonospace
+    font-size: 1rem
+    font-weight: 600
+    text-transform: uppercase
+
+.product-status__label--ready
+    color: var(--project-teal)
+
+.product-install
+    align-items: end
+    display: grid
+    gap: 7rem
+    grid-template-columns: 1fr 1fr
+    padding: 11rem 0
+
+    > div:first-child
+        > h2
+            font-size: clamp(3.8rem, 5vw, 5.6rem)
+            line-height: 1.05
+            margin: 0 0 2.5rem
+
+        > p:last-child
+            font-size: 1.65rem
+            line-height: 1.7
+            margin: 0
+
+            code
+                background: transparent
+                color: var(--project-blue)
+
+.product-command
+    background: var(--project-paper)
+    border: 1px solid var(--project-line-strong)
+    border-radius: 12px
+    box-shadow: 0 18px 50px rgba(23, 33, 43, .08)
+    padding: 2.5rem
+
+    > span
+        color: var(--project-muted)
+        display: block
+        font-family: $fontMonospace
+        font-size: 1rem
+        margin-bottom: 1.5rem
+        text-transform: uppercase
+
+    > code
+        background: transparent
+        color: var(--project-teal)
+        font-size: 1.25rem
+        line-height: 1.7
+        padding: 0
+
+.product-footer
+    align-items: center
+    border-top: 1px solid var(--project-line)
+    display: flex
+    justify-content: space-between
+
+    > div
+        display: flex
+        flex-direction: column
+        gap: .4rem
+
+        > strong
+            color: var(--project-ink)
+            font-size: 1.3rem
+
+        > span
+            color: var(--project-muted)
+            font-size: 1.1rem
+
+    > a
+        color: var(--project-blue)
+        font-family: $fontMonospace
+        font-size: 1rem
+        text-decoration: none
+        text-transform: uppercase
+
+@media (max-width: 1050px)
+    .product-nav__note
+        display: none
+
+    .product-nav
+        grid-template-columns: 1fr 1fr
+
+    .product-feature
+        > .product-feature__copy
+            grid-template-columns: 1fr
+
+    .product-list
+        grid-column: 1
+
+@media (max-width: 760px)
+    .product-main
+        padding: 0 2rem
+
+    .product-nav,
+    .product-footer
+        padding: 1.5rem 2rem
+
+    .product-nav
+        border-radius: 0
+        border-left: 0
+        border-right: 0
+        top: 0
+
+        > nav
+            gap: 1.3rem
+
+            > a:first-child,
+            > a:nth-child(2)
+                display: none
+
+    .product-hero
+        gap: 5rem
+        padding: 7rem 0
+
+    .product-hero__copy
+        > h1
+            font-size: 4.6rem
+
+        > .product-hero__lead
+            font-size: 1.55rem
+
+    .product-hero__visual,
+    .product-feature__visual
+        border-radius: 10px
+        padding: .6rem
+
+        > img
+            border-radius: 6px
+
+    .product-statement
+        gap: 3rem
+        grid-template-columns: 1fr
+        padding: 4rem 3rem
+
+        h2
+            font-size: 3.8rem
+
+    .product-statement__label
+        max-width: 150px
+
+    .product-feature
+        padding: 8rem 0
+
+    .product-capabilities,
+    .product-docs__grid,
+    .product-status__grid,
+    .product-install
+        grid-template-columns: 1fr
+
+    .product-capabilities
+        padding: 7rem 0
+
+    .product-docs,
+    .product-status
+        padding-bottom: 8rem
+        padding-top: 8rem
+
+    .product-docs__intro,
+    .product-status__intro
+        grid-template-columns: 1fr
+
+        > h2
+            font-size: 3.8rem
+
+    .product-docs__grid
+        margin-top: 5rem
+
+    .product-status
+        padding-left: 2rem
+        padding-right: 2rem
+
+    .product-install
+        gap: 4rem
+        padding: 8rem 0
+
+@media (max-width: 480px)
+    .product-nav
+        > nav
+            > a:nth-child(3)
+                display: none
+
+    .product-hero__copy
+        > h1
+            font-size: 3.8rem
+
+    .product-capabilities
+        > div
+            min-height: 0
+
+            > h3
+                margin-top: 3.5rem
+
+    .product-footer
+        align-items: flex-start
+        gap: 2rem
