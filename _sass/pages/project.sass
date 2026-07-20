@@ -97,6 +97,15 @@
         gap: 2rem
         justify-self: end
 
+.product-nav__github
+    align-items: center
+    display: inline-flex
+    justify-content: center
+
+    > svg
+        height: 2.15rem
+        width: 2.15rem
+
 .product-main
     margin: 0 auto
     max-width: 1440px
@@ -187,6 +196,13 @@
         background: var(--project-blue)
         border-color: var(--project-blue)
         color: #fff
+
+.product-button--github
+    gap: .8rem
+
+    > svg
+        height: 1.55rem
+        width: 1.55rem
 
 .product-facts
     display: flex
@@ -547,8 +563,8 @@
         > nav
             gap: 1.3rem
 
-            > a:first-child,
-            > a:nth-child(2)
+            > a:nth-child(2),
+            > a:nth-child(3)
                 display: none
 
     .product-hero
@@ -619,7 +635,7 @@
 @media (max-width: 480px)
     .product-nav
         > nav
-            > a:nth-child(3)
+            > a:nth-child(4)
                 display: none
 
     .product-hero__copy
