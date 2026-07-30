@@ -8,7 +8,7 @@ tag:
 - adhd
 - personal
 - personal development
-featured: true
+featured: false
 star: false
 category: blog
 author: granvalenti
