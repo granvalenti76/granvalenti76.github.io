@@ -5,6 +5,7 @@ date: 2026-07-13
 image: /assets/images/turbocode-readme-report.png
 projects: true
 star: true
+featured: true
 tag:
   - swift
   - swiftui
