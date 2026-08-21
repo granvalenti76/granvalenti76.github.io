@@ -41,6 +41,19 @@ description: A native SwiftUI agent harness with workspace-scoped tools for Xcod
         </dl>
     </section>
 
+    <section class="product-install" id="install" aria-labelledby="install-title">
+        <div>
+            <p class="product-eyebrow">Install with Homebrew</p>
+            <h2 id="install-title">One command. Native app.</h2>
+            <p>Install the current TurboCode cask directly from the <a href="https://github.com/granvalenti76/homebrew-tap" target="_blank" rel="noopener noreferrer">granvalenti76 tap</a>. Version 0.3.3 is an alpha build, ad-hoc signed and not notarized; macOS may ask for approval in <strong>Privacy &amp; Security</strong>. The current cask requires macOS 27 beta 5.</p>
+        </div>
+        <div class="product-command">
+            <span>Terminal</span>
+            <code>brew install --cask granvalenti76/tap/turbocode</code>
+            <a href="https://github.com/granvalenti76/homebrew-tap/blob/main/Casks/turbocode.rb" target="_blank" rel="noopener noreferrer">View cask recipe ↗</a>
+        </div>
+    </section>
+
     <section class="product-demo" aria-labelledby="demo-title">
         <div class="product-section-heading">
             <div>
@@ -174,8 +187,8 @@ description: A native SwiftUI agent harness with workspace-scoped tools for Xcod
     <section class="product-release-row">
         <div>
             <p class="product-eyebrow">Current release</p>
-            <h2>0.3.2</h2>
-            <p>Ripgrep search, bounded reads, stable Llama caching, and a more complete code-review workflow.</p>
+            <h2>0.3.3</h2>
+            <p>Live Llama reasoning, manual context compaction, runtime details, and optional Safari browsing through MCP.</p>
         </div>
         <a href="{{ '/turbocode/changelog/' | relative_url }}">Read release notes →</a>
     </section>
