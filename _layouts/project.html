@@ -17,11 +17,16 @@ layout: default
     {% if page.project_changelog %}
     <a href="{{ '/turbocode/' | relative_url }}">Project</a>
     <a href="{{ '/turbocode/changelog/' | relative_url }}" aria-current="page">Changelog</a>
+    {% elsif page.project_news %}
+    <a href="{{ '/turbocode/' | relative_url }}">Project</a>
+    <a href="{{ '/turbocode/news/' | relative_url }}" aria-current="page">News <span class="product-nav__new" aria-label="New">✓</span></a>
+    <a href="{{ '/turbocode/changelog/' | relative_url }}">Changelog</a>
     {% else %}
     <a href="{{ '/' | relative_url }}">Home</a>
     <a href="#overview">Overview</a>
     <a href="#models">Models</a>
     <a href="#status">Status</a>
+    <a href="{{ '/turbocode/news/' | relative_url }}">News <span class="product-nav__new" aria-label="New">✓</span></a>
     <a href="{{ '/turbocode/changelog/' | relative_url }}">Changelog</a>
     {% endif %}
     <a href="{{ '/projects/' | relative_url }}">Projects</a>

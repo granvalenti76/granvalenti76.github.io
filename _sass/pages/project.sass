@@ -106,6 +106,26 @@
         height: 2.15rem
         width: 2.15rem
 
+.product-nav__new
+    align-items: center
+    background: #ff453a
+    border: 2px solid var(--project-paper)
+    border-radius: 999px
+    box-shadow: 0 2px 5px rgba(133, 24, 20, .22)
+    color: #fff
+    display: inline-flex
+    font-family: $fontSans
+    font-size: .72rem
+    font-weight: 800
+    height: 1.35rem
+    justify-content: center
+    line-height: 1
+    margin-left: .18rem
+    position: relative
+    top: -.48rem
+    transform: rotate(-8deg)
+    width: 1.35rem
+
 .product-main
     margin: 0 auto
     max-width: 1440px
@@ -875,6 +895,137 @@
                 &:first-child
                     border-top: 0
 
+.product-news-page
+    margin: 0 auto
+
+.product-news-hero
+    border-bottom: 1px solid var(--project-line)
+    padding: 10rem 0 8rem
+
+.product-news-hero__copy
+    max-width: 900px
+
+    > h1
+        font-size: clamp(5rem, 8vw, 9rem)
+        font-weight: 650
+        letter-spacing: -.04em
+        line-height: .93
+        margin: 0 0 3rem
+
+.product-news-hero__lead
+    color: var(--project-muted)
+    font-size: 1.8rem
+    line-height: 1.7
+    margin: 0
+    max-width: 800px
+
+.product-news-hero__meta
+    border-top: 1px solid var(--project-line-strong)
+    display: flex
+    gap: 3rem
+    margin-top: 4rem
+    padding-top: 1.2rem
+
+    > span
+        color: var(--project-muted)
+        font-family: $fontMonospace
+        font-size: 1rem
+
+.product-news-hero__image,
+.product-news-figure
+    margin: 0
+
+.product-news-hero__image
+    margin-top: 7rem
+
+    > img,
+    > figcaption
+        width: 100%
+
+    > img
+        display: block
+
+    > figcaption
+        color: var(--project-muted)
+        font-size: 1.15rem
+        line-height: 1.5
+        margin-top: 1.2rem
+
+.product-news-section
+    border-bottom: 1px solid var(--project-line)
+    display: grid
+    gap: 5rem
+    grid-template-columns: minmax(220px, .65fr) minmax(0, 1.35fr)
+    padding: 8rem 0
+
+.product-news-section__label
+    > h2
+        font-size: clamp(2.6rem, 3.5vw, 4rem)
+        line-height: 1.05
+        margin: 0
+
+.product-news-copy
+    max-width: 850px
+
+    > p
+        font-size: 1.45rem
+        line-height: 1.75
+        margin: 0 0 1.7rem
+
+        &:last-child
+            margin-bottom: 0
+
+        code
+            background: transparent
+            color: var(--project-blue)
+            padding: 0
+
+.product-news-callout
+    border-left: 3px solid var(--project-teal)
+    margin: 3rem 0 0
+    padding: .4rem 0 .4rem 2rem
+
+    > p
+        color: var(--project-ink)
+        font-size: 1.65rem
+        line-height: 1.5
+        margin: 0
+
+.product-news-figure
+    grid-column: 1 / -1
+    margin-top: 1rem
+
+    > img
+        border: 1px solid var(--project-line-strong)
+        display: block
+        height: auto
+        width: 100%
+
+    > figcaption
+        color: var(--project-muted)
+        font-family: $fontMonospace
+        font-size: 1rem
+        line-height: 1.6
+        margin-top: 1.2rem
+
+.product-news-closing
+    max-width: 920px
+    padding: 9rem 0 10rem
+
+    > h2
+        font-size: clamp(3.8rem, 5vw, 6rem)
+        line-height: 1
+        margin: 0 0 2.5rem
+
+    > p:not(.product-eyebrow)
+        color: var(--project-muted)
+        font-size: 1.45rem
+        line-height: 1.75
+        margin: 0 0 1.7rem
+
+    .product-actions
+        margin-top: 3rem
+
 .product-release-row
     align-items: end
     border-bottom: 1px solid var(--project-line)
@@ -1186,6 +1337,33 @@
     .product-tooling,
     .product-project-status
         padding: 6rem 0
+
+    .product-news-hero
+        padding: 7rem 0 6rem
+
+    .product-news-hero__copy
+        > h1
+            font-size: 4.8rem
+
+    .product-news-section
+        gap: 2.5rem
+        grid-template-columns: 1fr
+        padding: 6rem 0
+
+    .product-news-section__label
+        > h2
+            font-size: 3.6rem
+
+    .product-news-hero__image
+        margin-top: 4rem
+
+    .product-news-copy
+        > p,
+        .product-news-callout > p
+            font-size: 1.35rem
+
+    .product-news-closing
+        padding: 6rem 0 7rem
 
     .product-section-heading
         gap: 2rem
