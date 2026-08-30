@@ -15,11 +15,42 @@ description: Release notes and updates for TurboCode, a native open-source macOS
         <p>Changes to the native macOS coding agent for Swift.</p>
     </header>
 
+    <article class="changelog-release" id="release-0-4-0">
+        <header class="changelog-release__header">
+            <div>
+                <h2>0.4.0</h2>
+                <p>Current release · Released 30 August 2026</p>
+            </div>
+            <a href="https://github.com/granvalenti76/TurboCode/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer">View full changelog on GitHub ↗</a>
+        </header>
+
+        <p class="changelog-release__summary">TurboCode 0.4 turns the application into a broader native agent harness, with a shared runtime, controlled TypeScript extensions, a more direct workspace and Git workflow, and new native macOS surfaces for managing work.</p>
+
+        <div class="changelog-release__facts">
+            <span>Shared runtime</span>
+            <span>TypeScript plugins</span>
+            <span>Editorial Desk</span>
+            <span>Transcript export</span>
+        </div>
+
+        <section class="changelog-section">
+            <h3>Highlights</h3>
+            <ul>
+                <li><strong>Shared runtime.</strong> Native and Codex sessions now share the same lifecycle for turns, tools, approvals, cancellation, persistence, and completion.</li>
+                <li><strong>Workspace safety.</strong> File operations outside the active workspace show the exact operation and wait for explicit user approval.</li>
+                <li><strong>TypeScript plugins.</strong> The new <code>@granvalenti/turbocode-sdk</code> supports typed tools, custom widgets, automatic discovery, profile activation, <code>/reload</code>, timeouts, cancellation, and crash recovery.</li>
+                <li><strong>Editorial Desk.</strong> Drafts can be written, reviewed with sources and editorial findings, and published to the workspace in a controlled way.</li>
+                <li><strong>Transcript sharing.</strong> A transcript can be sent to Notes or saved as JSON; multiple transcripts can be exported as a ZIP.</li>
+                <li><strong>More native workflows.</strong> Workspace and chat management now includes immediate deletion, compact swipe actions, automatic conversation titles, and improved toolbar and sidebar presentation.</li>
+            </ul>
+        </section>
+    </article>
+
     <article class="changelog-release" id="release-0-3-3">
         <header class="changelog-release__header">
             <div>
                 <h2>0.3.3</h2>
-                <p>Current release · Released 21 August 2026</p>
+                <p>Previous release · Released 21 August 2026</p>
             </div>
             <a href="https://github.com/granvalenti76/TurboCode/releases/tag/v0.3.3" target="_blank" rel="noopener noreferrer">View release on GitHub ↗</a>
         </header>
@@ -58,7 +89,7 @@ description: Release notes and updates for TurboCode, a native open-source macOS
         <header class="changelog-release__header">
             <div>
                 <h2>0.3.2</h2>
-                <p>Previous release · 11 commits since 0.3.1</p>
+                <p>Earlier release · 11 commits since 0.3.1</p>
             </div>
             <a href="https://github.com/granvalenti76/TurboCode" target="_blank" rel="noopener noreferrer">View source on GitHub ↗</a>
         </header>
