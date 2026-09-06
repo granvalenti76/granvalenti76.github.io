@@ -15,11 +15,73 @@ description: Release notes and updates for TurboCode, a native open-source macOS
         <p>Changes to the native macOS coding agent for Swift.</p>
     </header>
 
+    <article class="changelog-release" id="release-0-5-0">
+        <header class="changelog-release__header">
+            <div>
+                <h2>0.5.0</h2>
+                <p>Current release · Prerelease · Released 6 September 2026</p>
+            </div>
+            <a href="https://github.com/granvalenti76/TurboCode/releases/tag/v0.5" target="_blank" rel="noopener noreferrer">View release on GitHub ↗</a>
+        </header>
+
+        <p class="changelog-release__summary">TurboCode 0.5 is a prerelease focused on controllable agent collaboration, profile-driven workers, and a more reviewable runtime workflow for Swift and SwiftUI development on macOS.</p>
+
+        <div class="changelog-release__facts">
+            <span>Agent collaboration</span>
+            <span>Worker pools</span>
+            <span>Codex profiles</span>
+            <span>First-launch onboarding</span>
+        </div>
+
+        <section class="changelog-section">
+            <h3>Highlights</h3>
+            <ul>
+                <li><strong>Runtime steering.</strong> Queue corrections while a turn is running, with explicit Codex turn and steer support for more responsive intervention.</li>
+                <li><strong>Asynchronous delegation.</strong> Delegate work to worker pools and track concurrent activity without losing visibility into the overall session.</li>
+                <li><strong>Explicit worker routing.</strong> Route work through <code>worker_id</code> and worker role descriptions, with busy-worker protection to avoid conflicting assignments.</li>
+                <li><strong>Codex profiles.</strong> Profiles can provide worker-specific tool overrides, making the capabilities of each collaborating agent explicit.</li>
+                <li><strong>Transcript projection.</strong> Transcript context projection is improved, with reversible exclusions for tool exchanges when a worker needs a more focused context.</li>
+                <li><strong>Typed runtime receipts.</strong> Native and Codex runtimes now use executor-neutral streaming and typed tool receipts, giving the UI a more consistent view of progress and results.</li>
+                <li><strong>Custom Profiles / Agent Team.</strong> The workspace for composing custom profiles and agent teams has been refined for collaborative workflows.</li>
+                <li><strong>TypeScript onboarding.</strong> Plugin examples and SDK onboarding now cover more of the path from a first extension to a usable tool.</li>
+                <li><strong>Additive first launch.</strong> TurboCode creates the local <code>~/.turbocode/</code> layout on first launch while preserving existing configuration and model endpoints during onboarding and migration.</li>
+            </ul>
+        </section>
+
+        <section class="changelog-section">
+            <h3>Onboarding</h3>
+            <ul>
+                <li><strong>Local configuration.</strong> The first-launch layout includes <code>models.json</code>, <code>config.json</code>, and <code>profiles.json</code>, along with sessions, diagnostics, built-in Skills, TypeScript plugins and SDK files, a repository-map cache, and official and user documentation.</li>
+                <li><strong>Migration safety.</strong> Existing user configuration and model endpoints are preserved when the new local layout is created or migrated.</li>
+            </ul>
+        </section>
+
+        <section class="changelog-section">
+            <h3>Verification</h3>
+            <ul>
+                <li><strong>Bootstrap tests.</strong> <code>FirstLaunchBootstrapTests</code> passed 9/9 checks.</li>
+                <li><strong>Repository hygiene.</strong> <code>git diff --check</code> passed, and the <code>dev</code> branch was merged from the existing 0.4 baseline.</li>
+                <li><strong>Prerelease note.</strong> Real-provider interactive validation remains a release-gate task for the prerelease.</li>
+            </ul>
+        </section>
+
+        <section class="changelog-section">
+            <h3>Demo</h3>
+            <figure class="product-demo__frame">
+                <video controls playsinline preload="metadata" poster="{{ '/assets/images/turbocode-demo-poster.jpg' | relative_url }}" aria-label="TurboCode 0.5 demo">
+                    <source src="{{ '/assets/video/turbocode-0-5-demo.mp4' | relative_url }}" type="video/mp4">
+                    Your browser does not support embedded video.
+                </video>
+                <figcaption>Demo della prerelease TurboCode 0.5, allegata alla release GitHub.</figcaption>
+            </figure>
+        </section>
+    </article>
+
     <article class="changelog-release" id="release-0-4-0">
         <header class="changelog-release__header">
             <div>
                 <h2>0.4.0</h2>
-                <p>Current release · Released 30 August 2026</p>
+                <p>Previous release · Released 30 August 2026</p>
             </div>
             <a href="https://github.com/granvalenti76/TurboCode/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer">View full changelog on GitHub ↗</a>
         </header>

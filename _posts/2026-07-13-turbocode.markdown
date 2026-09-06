@@ -187,8 +187,8 @@ description: A native SwiftUI agent harness with workspace-scoped tools for Xcod
     <section class="product-release-row">
         <div>
             <p class="product-eyebrow">Current release</p>
-            <h2>0.3.3</h2>
-            <p>Live Llama reasoning, manual context compaction, runtime details, and optional Safari browsing through MCP.</p>
+            <h2>0.5.0</h2>
+            <p>Controllable agent collaboration, profile-driven workers, typed runtime receipts, and additive first-launch onboarding.</p>
         </div>
         <a href="{{ '/turbocode/changelog/' | relative_url }}">Read release notes →</a>
     </section>
