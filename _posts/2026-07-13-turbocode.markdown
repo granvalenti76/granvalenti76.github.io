@@ -186,11 +186,11 @@ description: A native SwiftUI agent harness with workspace-scoped tools for Xcod
 
     <section class="product-release-row">
         <div>
-            <p class="product-eyebrow">Current release</p>
-            <h2>0.5.0</h2>
-            <p>Controllable agent collaboration, profile-driven workers, typed runtime receipts, and additive first-launch onboarding.</p>
+            <p class="product-eyebrow">Current release · 13 September 2026</p>
+            <h2>0.6.0</h2>
+            <p>Xcode MCP and ACP integration, workspace file previews and review, configurable profile workers, and session metrics in the composer.</p>
         </div>
-        <a href="{{ '/turbocode/changelog/' | relative_url }}">Read release notes →</a>
+        <a href="{{ '/turbocode/changelog/' | relative_url }}#release-0-6-0">Read release notes →</a>
     </section>
 
     <section class="product-build">

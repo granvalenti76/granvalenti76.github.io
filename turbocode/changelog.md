@@ -15,11 +15,76 @@ description: Release notes and updates for TurboCode, a native open-source macOS
         <p>Changes to the native macOS coding agent for Swift.</p>
     </header>
 
+    <article class="changelog-release" id="release-0-6-0">
+        <header class="changelog-release__header">
+            <div>
+                <h2>0.6.0</h2>
+                <p>Current release · Released 13 September 2026</p>
+            </div>
+            <a href="https://github.com/granvalenti76/TurboCode/releases/tag/v0.6" target="_blank" rel="noopener noreferrer">View release on GitHub ↗</a>
+        </header>
+
+        <p class="changelog-release__summary">TurboCode 0.6 adds Xcode MCP and ACP integration, richer workspace inspection and review, clearer profile routing, and stronger lifecycle and safety boundaries across native and headless sessions.</p>
+
+        <div class="changelog-release__facts">
+            <span>Xcode MCP</span>
+            <span>ACP integration</span>
+            <span>Workspace file review</span>
+            <span>Session metrics</span>
+        </div>
+
+        <section class="changelog-section">
+            <h3>Workspace preview</h3>
+            <figure class="product-demo__frame">
+                <img src="{{ '/assets/images/turbocode-0-6-workspace.png' | relative_url }}" width="3064" height="1756" loading="lazy" alt="TurboCode 0.6 showing workspace files, a Markdown preview of the Xcode ACP setup guide, and context, cache hit, and session token statistics.">
+                <figcaption>TurboCode 0.6: workspace file previews, Xcode ACP setup, and session metrics in the composer.</figcaption>
+            </figure>
+        </section>
+
+        <section class="changelog-section">
+            <h3>Features</h3>
+            <ul>
+                <li><strong>Built-in Codex profile.</strong> Explicit profile tool overrides control the tools available to Codex. Capabilities come from its bridge, and server sessions rebuild when the selected tools change.</li>
+                <li><strong>Configured profile workers.</strong> Native and Codex delegation supports worker destinations, role guidance, independent capacity, and up to four concurrent workers.</li>
+                <li><strong>Xcode MCP.</strong> Opt-in integration adds stdio JSON-RPC transport, paginated tool discovery, rich tool results, and an <code>xcode_mcp</code> gateway for Foundation Models and Codex sessions.</li>
+                <li><strong>ACP integration.</strong> The bundled headless <code>turbocode-acp</code> helper supports initialization, sessions, prompts, updates, cancellation, and negotiated permissions through the shared runtime.</li>
+                <li><strong>Client MCP servers.</strong> ACP sessions can discover and route tools from client MCP servers within each session, while the host runtime retains ownership of approvals and providers.</li>
+                <li><strong>Unified Skills.</strong> <code>SKILL.md</code> selection is consistent across prompts, tools, slash activation, and Codex handoffs. On-demand MCP integrations retain their separate catalog.</li>
+                <li><strong>Native translucent sidebar.</strong> The sidebar blends with the desktop while preserving native activation, appearance, and accessibility behavior.</li>
+                <li><strong>Workspace previews.</strong> Markdown and source files can be previewed in place with bounded partial reads, persistent selection, Swift syntax highlighting, and compact Editorial Desk identity markers.</li>
+                <li><strong>Workspace file review.</strong> Add line-scoped comments that re-anchor as a document changes, with prompts in the document's language and review comments kept separate from Git diff comments.</li>
+                <li><strong>Composer controls and session metrics.</strong> Choose profiles and reasoning settings for each destination, and inspect session-scoped <code>Context</code>, <code>Cache hit</code>, and <code>Session tokens</code> statistics with optional persistence.</li>
+            </ul>
+        </section>
+
+        <section class="changelog-section">
+            <h3>Fixes</h3>
+            <ul>
+                <li><strong>Bash approvals.</strong> Filesystem denials are detected even when hidden by redirects, truncated output, or a successful final shell command. Approval retries rerun the complete command after cleaning up process groups and inherited child processes.</li>
+                <li><strong>ACP session lifecycle.</strong> Each session retains one provider runtime, rebuilds it only when the selected model changes, and serializes persistent stdio input to improve lifecycle handling and model caching.</li>
+                <li><strong>ACP permissions and cancellation.</strong> Rejected permission requests prevent execution, and cancelled tool updates remain valid ACP states.</li>
+                <li><strong>Interrupted transcripts.</strong> Stopping an interrupted turn no longer duplicates transcript content: profile-owned instructions are excluded from the portable history delta.</li>
+                <li><strong>Plugin guidance.</strong> Model-facing instructions now point to the installed SDK package and its actual examples.</li>
+            </ul>
+        </section>
+
+        <section class="changelog-section">
+            <h3>Other updates</h3>
+            <ul>
+                <li><strong>Shared prompt guidance.</strong> Refined role, collaboration, follow-through, and delegation instructions. Llama profiles search through Bash with <code>rg</code>, while profiles with the dedicated search capability continue to use it directly.</li>
+                <li><strong>Project integration.</strong> Updated Xcode metadata, package integration, ACP helper setup, bundle configuration, and external model configuration guidance for the new integrations.</li>
+                <li><strong>Public project boundary.</strong> Documented the separation between the public <code>dev</code> branch and the private commercial CyberDeck package, including its intentional public teaser.</li>
+            </ul>
+        </section>
+
+        <p class="changelog-release__footer">See the <a href="https://github.com/granvalenti76/TurboCode/blob/v0.6/CHANGELOG.md" target="_blank" rel="noopener noreferrer">full changelog for v0.6</a> and <a href="https://github.com/granvalenti76/TurboCode/compare/v0.5...v0.6" target="_blank" rel="noopener noreferrer">all changes since v0.5</a>.</p>
+    </article>
+
     <article class="changelog-release" id="release-0-5-0">
         <header class="changelog-release__header">
             <div>
                 <h2>0.5.0</h2>
-                <p>Current release · Prerelease · Released 6 September 2026</p>
+                <p>Previous release · Prerelease · Released 6 September 2026</p>
             </div>
             <a href="https://github.com/granvalenti76/TurboCode/releases/tag/v0.5" target="_blank" rel="noopener noreferrer">View release on GitHub ↗</a>
         </header>
