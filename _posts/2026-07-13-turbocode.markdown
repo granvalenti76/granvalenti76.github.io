@@ -45,11 +45,11 @@ description: A native SwiftUI agent harness with workspace-scoped tools for Xcod
         <div>
             <p class="product-eyebrow">Install with Homebrew</p>
             <h2 id="install-title">One command. Native app.</h2>
-            <p>Install the current TurboCode cask directly from the <a href="https://github.com/granvalenti76/homebrew-tap" target="_blank" rel="noopener noreferrer">granvalenti76 tap</a>. Version 0.3.3 is an alpha build, ad-hoc signed and not notarized; macOS may ask for approval in <strong>Privacy &amp; Security</strong>. The current cask requires macOS 27 beta 5.</p>
+            <p>Install the current TurboCode cask directly from the <a href="https://github.com/granvalenti76/homebrew-tap" target="_blank" rel="noopener noreferrer">granvalenti76 tap</a>. Version 0.61 is ad-hoc signed and not notarized; macOS may ask for approval in <strong>Privacy &amp; Security</strong>. It requires macOS 27; development workflows need Xcode 27 beta and Swift 6, and TypeScript plugins need Node.js 24 or later.</p>
         </div>
         <div class="product-command">
             <span>Terminal</span>
-            <code>brew install --cask granvalenti76/tap/turbocode</code>
+            <code>brew install --cask granvalenti76/homebrew-tap/turbocode</code>
             <a href="https://github.com/granvalenti76/homebrew-tap/blob/main/Casks/turbocode.rb" target="_blank" rel="noopener noreferrer">View cask recipe ↗</a>
         </div>
     </section>
@@ -104,10 +104,11 @@ description: A native SwiftUI agent harness with workspace-scoped tools for Xcod
         </div>
 
         <aside class="product-design-note">
-            <p class="product-eyebrow">Design direction / 0.3.2</p>
+            <p class="product-eyebrow">Design direction / 0.3.2 → 0.61</p>
             <h3>Deterministic boundaries, less prescriptive reasoning.</h3>
             <p>Earlier versions tried to make the agent loop more deterministic, including the insertion of tool calls to reinforce a predefined path in specific scenarios. Work on 0.3.2 showed that too much control can also suppress useful model behavior and limit what a capable model can do.</p>
             <p>The current direction keeps capabilities, workspace access, and side effects explicit, while giving the model more freedom to decide which tool to use next. The harness still defines the boundaries; it no longer tries to prescribe every step inside them.</p>
+            <p>Version 0.61 applies the same idea to small models: instead of hard-coding a path, AnchorSignal dynamic routing offers a bounded tool package for each request, and the active profile’s allowlist remains the capability boundary.</p>
         </aside>
     </section>
 
@@ -126,12 +127,45 @@ description: A native SwiftUI agent harness with workspace-scoped tools for Xcod
                 <p>Sufficiently capable local models can handle complete sessions. A tested configuration uses <code>Qwen3.6-35B-A3B-UD-IQ2_XXS.gguf</code> through <code>llama-server</code>, with a 132K context window and Q4 KV cache, on small and medium-sized projects.</p>
             </article>
             <article>
-                <h3>Codex and DeepSeek Flash</h3>
-                <p>Optional integrations provide a stronger backend when the workspace or task exceeds the practical limits of the selected local model.</p>
+                <h3>Codex and DeepSeek</h3>
+                <p>Optional frontier backends: OpenAI Codex through the official Codex CLI App Server, and the DeepSeek API with its key stored in the macOS Keychain. They provide a stronger option when the task exceeds the practical limits of the selected local model.</p>
             </article>
             <article>
-                <h3>Apple on-device and PCC</h3>
-                <p>Apple Foundation Models and Private Cloud Compute can handle small, bounded tasks or participate as subagents in experimental orchestration workflows.</p>
+                <h3>Apple on-device</h3>
+                <p>Apple Foundation Models run locally with no server or API key, and suit short answers and small agentic tasks within an approximately 8k-token context. Private Cloud Compute through <code>fm serve</code> remains a legacy compatibility path.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="product-overview" id="workflows">
+        <div class="product-section-heading">
+            <div>
+                <p class="product-eyebrow">Workflows</p>
+                <h2>Coordinate, route, and integrate.</h2>
+            </div>
+            <p>Beyond a single conversation, TurboCode can split work between models, narrow the tools offered to each request, and plug into Xcode and TypeScript extensions.</p>
+        </div>
+
+        <div class="product-technical-list">
+            <article>
+                <span>01</span>
+                <h3>Coordinator → Worker</h3>
+                <p>A capable model such as Codex or DeepSeek plans a task and delegates subtasks to a smaller local model. Workers are routed by <code>worker_id</code> and role, run in a pool of up to four, and stay inside their configured boundaries while TurboCode tracks and verifies the result.</p>
+            </article>
+            <article>
+                <span>02</span>
+                <h3>Dynamic routing</h3>
+                <p>New in 0.61. A small on-device semantic model, AnchorSignal, matches each request to a bounded tool package: implementation, workspace inspection, search, Git, Xcode, guidance, or conversation. Enable it in <strong>Settings → Agents</strong>; the model is downloaded and verified on first use.</p>
+            </article>
+            <article>
+                <span>03</span>
+                <h3>Xcode MCP and ACP</h3>
+                <p>Opt-in Xcode MCP integration, and a bundled headless <code>turbocode-acp</code> helper that registers TurboCode as an external ACP agent in Xcode, sharing the same runtime, approvals, and providers.</p>
+            </article>
+            <article>
+                <span>04</span>
+                <h3>TypeScript plugins</h3>
+                <p>Optional typed tools and custom response widgets built with <code>@granvalenti/turbocode-sdk</code>. Plugins run as separate Node.js processes; TurboCode keeps ownership of approvals, workspace access, timeouts, and lifecycle. Reload with <code>/reload</code>.</p>
             </article>
         </div>
     </section>
@@ -144,11 +178,11 @@ description: A native SwiftUI agent harness with workspace-scoped tools for Xcod
             </div>
         </div>
         <dl class="product-tooling__list">
-            <div><dt>Workspace</dt><dd>List files, search with ripgrep, read bounded line ranges, inspect project structure.</dd></div>
+            <div><dt>Workspace</dt><dd>List files, search with ripgrep, read bounded line ranges, preview Markdown and source files, and add line-scoped review comments.</dd></div>
             <div><dt>Code</dt><dd>Apply controlled edits, review diffs, attach inline comments, undo against known revisions.</dd></div>
             <div><dt>Xcode</dt><dd>Inspect Xcode and SwiftPM projects, build targets, run tests, return bounded diagnostics.</dd></div>
             <div><dt>Git</dt><dd>Status, diff, branches, staging, commits, merges, rebases, pulls, and pushes as visible tool calls.</dd></div>
-            <div><dt>Context</dt><dd>Model profiles, AGENTS files, Skills, cached repository maps, and backend-specific history policies.</dd></div>
+            <div><dt>Context</dt><dd>Model profiles, AGENTS files, Skills, cached repository maps, backend-specific history policies, and session metrics for context, cache hits, and tokens.</dd></div>
         </dl>
     </section>
 
@@ -169,6 +203,7 @@ description: A native SwiftUI agent harness with workspace-scoped tools for Xcod
                     <li>Workspace-scoped code and Git tools</li>
                     <li>Integrated review and inline comments</li>
                     <li>AGENTS and Skills support</li>
+                    <li>Worker delegation and Xcode ACP integration</li>
                 </ul>
             </div>
             <div>
@@ -178,6 +213,7 @@ description: A native SwiftUI agent harness with workspace-scoped tools for Xcod
                     <li>Best tested on small and medium projects</li>
                     <li>Setup assumes familiarity with Apple tooling</li>
                     <li>Approval and orchestration flows are evolving</li>
+                    <li>Dynamic routing is experimental, for local models only</li>
                     <li>Clean-install testing remains ongoing</li>
                 </ul>
             </div>
@@ -186,11 +222,11 @@ description: A native SwiftUI agent harness with workspace-scoped tools for Xcod
 
     <section class="product-release-row">
         <div>
-            <p class="product-eyebrow">Current release · 13 September 2026</p>
-            <h2>0.6.0</h2>
-            <p>Xcode MCP and ACP integration, workspace file previews and review, configurable profile workers, and session metrics in the composer.</p>
+            <p class="product-eyebrow">Current release · 20 September 2026</p>
+            <h2>0.61</h2>
+            <p>AnchorSignal dynamic routing for local models, Profile and Auto tool selection in the composer, and ACP client MCP fixes. Builds on 0.6.0 with Xcode MCP and ACP integration, workspace previews, and configurable profile workers.</p>
         </div>
-        <a href="{{ '/turbocode/changelog/' | relative_url }}#release-0-6-0">Read release notes →</a>
+        <a href="{{ '/turbocode/changelog/' | relative_url }}#release-0-61">Read release notes →</a>
     </section>
 
     <section class="product-build">

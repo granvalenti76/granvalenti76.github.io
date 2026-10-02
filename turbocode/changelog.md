@@ -15,11 +15,53 @@ description: Release notes and updates for TurboCode, a native open-source macOS
         <p>Changes to the native macOS coding agent for Swift.</p>
     </header>
 
+    <article class="changelog-release" id="release-0-61">
+        <header class="changelog-release__header">
+            <div>
+                <h2>0.61</h2>
+                <p>Current release · Released 20 September 2026</p>
+            </div>
+            <a href="https://github.com/granvalenti76/TurboCode/releases/tag/v0.61" target="_blank" rel="noopener noreferrer">View release on GitHub ↗</a>
+        </header>
+
+        <p class="changelog-release__summary">TurboCode 0.61 introduces AnchorSignal dynamic routing for local models. A small on-device semantic model selects a bounded tool package for each request, while profile permissions stay authoritative and sessions are not rebuilt when the selected tools remain unchanged.</p>
+
+        <div class="changelog-release__facts">
+            <span>Dynamic routing</span>
+            <span>AnchorSignal</span>
+            <span>Tool packages</span>
+            <span>ACP fixes</span>
+        </div>
+
+        <section class="changelog-section">
+            <h3>Features</h3>
+            <ul>
+                <li><strong>AnchorSignal semantic routing.</strong> Available for Apple on-device and supported local Llama conversations. Requests are matched against compact tool categories by cosine similarity, with a minimum similarity of <code>0.772</code> and the active profile's allowlist retained as the capability boundary.</li>
+                <li><strong>Profile and Auto modes.</strong> The composer can select tools by profile or automatically. A compact, transient routing receipt reports the selected package and tool count; detailed status is available from the adjacent package control.</li>
+                <li><strong>Bounded tool packages.</strong> Implementation, workspace inspection, search, Git, Xcode, guidance, and conversation. The Conversation package can list the workspace and read or edit files when the active profile permits it.</li>
+                <li><strong>Dynamic Routing settings.</strong> Under Settings → Agents, TurboCode downloads the pinned AnchorSignal model archive, verifies its size and SHA-256 digest, installs it atomically, and prepares the device specialization through CoreAI's managed model cache.</li>
+                <li><strong>Readiness gating.</strong> Auto routing becomes available only after the model files and CoreAI specialization pass validation, including a real embedding smoke test.</li>
+            </ul>
+        </section>
+
+        <section class="changelog-section">
+            <h3>Fixes</h3>
+            <ul>
+                <li><strong>ACP client MCP.</strong> Standard environment entries are parsed correctly, failed setup cannot leave child processes running, slow requests do not block unrelated responses, and provider or permission work cannot outlive session shutdown.</li>
+                <li><strong>Composer layout.</strong> Switching providers keeps the layout stable, and dynamic routing controls are hidden with a short native transition for unsupported DeepSeek and Codex conversations.</li>
+                <li><strong>Routing UI.</strong> Removed the permanent AnchorSignal inspector and obsolete Metal animation, which made the short routing step visually dominant.</li>
+                <li><strong>Routing diagnostics.</strong> Standardized on cosine similarity and kept the visible fallback threshold synchronized with the configured value.</li>
+            </ul>
+        </section>
+
+        <p class="changelog-release__footer">See the <a href="https://github.com/granvalenti76/TurboCode/blob/v0.61/CHANGELOG.md" target="_blank" rel="noopener noreferrer">full changelog for v0.61</a> and <a href="https://github.com/granvalenti76/TurboCode/compare/v0.6...v0.61" target="_blank" rel="noopener noreferrer">all changes since v0.6</a>.</p>
+    </article>
+
     <article class="changelog-release" id="release-0-6-0">
         <header class="changelog-release__header">
             <div>
                 <h2>0.6.0</h2>
-                <p>Current release · Released 13 September 2026</p>
+                <p>Previous release · Released 13 September 2026</p>
             </div>
             <a href="https://github.com/granvalenti76/TurboCode/releases/tag/v0.6" target="_blank" rel="noopener noreferrer">View release on GitHub ↗</a>
         </header>
@@ -137,7 +179,7 @@ description: Release notes and updates for TurboCode, a native open-source macOS
                     <source src="{{ '/assets/video/turbocode-0-5-demo.mp4' | relative_url }}" type="video/mp4">
                     Your browser does not support embedded video.
                 </video>
-                <figcaption>Demo della prerelease TurboCode 0.5, allegata alla release GitHub.</figcaption>
+                <figcaption>TurboCode 0.5 prerelease demo, attached to the GitHub release.</figcaption>
             </figure>
         </section>
     </article>
