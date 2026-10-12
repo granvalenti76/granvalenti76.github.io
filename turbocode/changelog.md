@@ -15,11 +15,64 @@ description: Release notes and updates for TurboCode, a native open-source macOS
         <p>Changes to the native macOS coding agent for Swift.</p>
     </header>
 
+    <article class="changelog-release" id="release-0-62">
+        <header class="changelog-release__header">
+            <div>
+                <h2>0.62</h2>
+                <p>Current release · Released 11 October 2026</p>
+            </div>
+            <a href="https://github.com/granvalenti76/TurboCode/releases/tag/v0.62" target="_blank" rel="noopener noreferrer">View release on GitHub ↗</a>
+        </header>
+
+        <p class="changelog-release__summary">TurboCode 0.62 introduces Cowork, a multi-purpose mode that runs builds, scripts, documents, and web artifacts inside an isolated Linux virtual machine. Coding remains unchanged: Cowork is a peer mode, activated once from Settings, and its results reach the Mac only through a reviewed export.</p>
+
+        <div class="changelog-release__facts">
+            <span>Cowork</span>
+            <span>Linux VM</span>
+            <span>Review &amp; Export</span>
+            <span>Apple Containerization</span>
+        </div>
+
+        <section class="changelog-section">
+            <h3>Features</h3>
+            <ul>
+                <li><strong>Cowork VM.</strong> One persistent Debian 12 VM managed through Apple Containerization 0.49.0, with Node.js 24, Python 3.11, headless Chromium, and common command-line tools. The guest boots in about 0.4 seconds.</li>
+                <li><strong>Cowork settings.</strong> Under Settings → Cowork, enable Cowork, install and verify the pinned guest with staged, cancellable progress, choose processors, memory, and network access, reset the VM, and remove Cowork. The first install downloads about 760 MB and requires Apple silicon and about 2.2 GB of free space.</li>
+                <li><strong>Coding | Cowork switch.</strong> A sidebar switch selects the mode. Sessions are created in the selected mode, lists never mix modes, and each session keeps its mode.</li>
+                <li><strong>Shared folders.</strong> Each session can share a folder from the toolbar, mounted read-only at <code>/work</code>.</li>
+                <li><strong>VM tools.</strong> <code>vm_exec</code>, <code>vm_file</code>, and <code>vm_export</code>. Cowork sessions receive only these tools plus the product guide and Markdown skills, and work with the on-device, Llama, and DeepSeek profiles.</li>
+                <li><strong>Review &amp; Export.</strong> A per-file review of the session's <code>/out</code> folder with Skip, Replace, and Keep Both decisions, text diffs for conflicts, and a composer shortcut that appears when deliverables are waiting.</li>
+                <li><strong>Diffs in the chat.</strong> Cowork file writes appear with the existing diff widget, without Undo or Git actions. The built-in product guide gains a Cowork page.</li>
+            </ul>
+        </section>
+
+        <section class="changelog-section">
+            <h3>Safety</h3>
+            <ul>
+                <li><strong>No Mac shell fallback.</strong> Cowork commands never run on the Mac. Codex, which executes on the Mac, is not available in Cowork sessions.</li>
+                <li><strong>Limited visibility.</strong> The VM sees only the shared folder (read-only) and its own outbox; sharing the disk root or home folder is refused.</li>
+                <li><strong>Verified exports.</strong> Every file is re-verified before copying, symbolic links are never followed, build folders are excluded, files changed after review are reported, execute permission is stripped, and the macOS quarantine attribute is set.</li>
+                <li><strong>Pinned guest.</strong> The guest kernel, image, and init filesystem are pinned by digest, and the kernel is verified by SHA-256 before installation.</li>
+            </ul>
+        </section>
+
+        <section class="changelog-section">
+            <h3>Other updates</h3>
+            <ul>
+                <li><strong>Virtualization entitlement.</strong> The app target adds <code>com.apple.security.virtualization</code> and links <code>apple/containerization</code> pinned to exactly 0.49.0. The ACP helper does not link Containerization.</li>
+                <li><strong>Session format.</strong> Session files gain optional <code>domain</code> and <code>coworkFolder</code> keys, and diff receipts gain an optional <code>location</code>. Older sessions decode unchanged.</li>
+                <li><strong>Guest image.</strong> Built and published by <a href="https://github.com/granvalenti76/TurboCode-Cowork-Image/releases/tag/v0.62.0" target="_blank" rel="noopener noreferrer">TurboCode-Cowork-Image v0.62.0</a>.</li>
+            </ul>
+        </section>
+
+        <p class="changelog-release__footer">See the <a href="https://github.com/granvalenti76/TurboCode/blob/v0.62/CHANGELOG.md" target="_blank" rel="noopener noreferrer">full changelog for v0.62</a> and <a href="https://github.com/granvalenti76/TurboCode/compare/v0.61...v0.62" target="_blank" rel="noopener noreferrer">all changes since v0.61</a>.</p>
+    </article>
+
     <article class="changelog-release" id="release-0-61">
         <header class="changelog-release__header">
             <div>
                 <h2>0.61</h2>
-                <p>Current release · Released 20 September 2026</p>
+                <p>Previous release · Released 20 September 2026</p>
             </div>
             <a href="https://github.com/granvalenti76/TurboCode/releases/tag/v0.61" target="_blank" rel="noopener noreferrer">View release on GitHub ↗</a>
         </header>

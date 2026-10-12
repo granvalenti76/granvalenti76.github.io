@@ -45,7 +45,7 @@ description: A native SwiftUI agent harness with workspace-scoped tools for Xcod
         <div>
             <p class="product-eyebrow">Install with Homebrew</p>
             <h2 id="install-title">One command. Native app.</h2>
-            <p>Install the current TurboCode cask directly from the <a href="https://github.com/granvalenti76/homebrew-tap" target="_blank" rel="noopener noreferrer">granvalenti76 tap</a>. Version 0.61 is ad-hoc signed and not notarized; macOS may ask for approval in <strong>Privacy &amp; Security</strong>. It requires macOS 27; development workflows need Xcode 27 beta and Swift 6, and TypeScript plugins need Node.js 24 or later.</p>
+            <p>Install the current TurboCode cask directly from the <a href="https://github.com/granvalenti76/homebrew-tap" target="_blank" rel="noopener noreferrer">granvalenti76 tap</a>. Version 0.62 is ad-hoc signed and not notarized; macOS may ask for approval in <strong>Privacy &amp; Security</strong>. It requires macOS 27; development workflows need Xcode 27 beta and Swift 6, and TypeScript plugins need Node.js 24 or later.</p>
         </div>
         <div class="product-command">
             <span>Terminal</span>
@@ -222,11 +222,11 @@ description: A native SwiftUI agent harness with workspace-scoped tools for Xcod
 
     <section class="product-release-row">
         <div>
-            <p class="product-eyebrow">Current release · 20 September 2026</p>
-            <h2>0.61</h2>
-            <p>AnchorSignal dynamic routing for local models, Profile and Auto tool selection in the composer, and ACP client MCP fixes. Builds on 0.6.0 with Xcode MCP and ACP integration, workspace previews, and configurable profile workers.</p>
+            <p class="product-eyebrow">Current release · 11 October 2026</p>
+            <h2>0.62</h2>
+            <p>Cowork, a new mode that builds web apps, runs Python scripts, renders pages, and produces documents inside an isolated Linux VM, with results reaching your folders only through a reviewed export. Builds on 0.61 with AnchorSignal dynamic routing for local models.</p>
         </div>
-        <a href="{{ '/turbocode/changelog/' | relative_url }}#release-0-61">Read release notes →</a>
+        <a href="{{ '/turbocode/changelog/' | relative_url }}#release-0-62">Read release notes →</a>
     </section>
 
     <section class="product-build">
