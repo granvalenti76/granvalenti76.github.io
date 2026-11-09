@@ -15,11 +15,66 @@ description: Release notes and updates for TurboCode, a native open-source macOS
         <p>Changes to the native macOS coding agent for Swift.</p>
     </header>
 
+    <article class="changelog-release" id="release-0-63">
+        <header class="changelog-release__header">
+            <div>
+                <h2>0.63</h2>
+                <p>Current release · Released 8 November 2026</p>
+            </div>
+            <a href="https://github.com/granvalenti76/TurboCode/releases/tag/v0.63" target="_blank" rel="noopener noreferrer">View release on GitHub ↗</a>
+        </header>
+
+        <p class="changelog-release__summary">TurboCode 0.63 lets local models see images dropped on the main view. It also removes the time limits that interrupted slow local models, and hardens how sessions are saved, restored, and recovered.</p>
+
+        <div class="changelog-release__facts">
+            <span>Image input</span>
+            <span>No request time limits</span>
+            <span>Session recovery</span>
+            <span><code>supportsVision</code></span>
+        </div>
+
+        <section class="changelog-section">
+            <h3>Features</h3>
+            <ul>
+                <li><strong>Image input.</strong> Drop PNG, JPEG, HEIC, WebP, GIF, or TIFF files on the main view to add thumbnails to the composer, up to four images of at most 20 MB each, for Llama-server and Apple on-device models. Sent images appear as thumbnails in the conversation.</li>
+                <li><strong>Images in Cowork.</strong> Image input also works in Cowork sessions. The image reaches only the model and is never copied into the VM.</li>
+                <li><strong>Vision detection.</strong> When the active model has no vision support, a brief notice is shown and the image is not added. Support is read from the new <code>supportsVision</code> key in <code>models.json</code> or, when the key is absent, from the running llama-server. Other backends do not accept images.</li>
+            </ul>
+        </section>
+
+        <section class="changelog-section">
+            <h3>Fixes</h3>
+            <ul>
+                <li><strong>No more request timeouts.</strong> Model requests have no time limit, so slow local models no longer fail with “The request timed out.” The 300-second limit on delegated and powerful-model workers is gone too. Stop still cancels everything at once.</li>
+                <li><strong>Unreadable sessions.</strong> One unreadable session file no longer empties the sidebar. Unreadable files are reported and never moved or rewritten, and an undecodable provider transcript no longer makes a conversation impossible to open.</li>
+                <li><strong>Saves and threads.</strong> Switching threads during a save can no longer write one conversation’s content into another’s file, and a background result arriving during a title, pin, or rename update is no longer lost.</li>
+                <li><strong>Newer session files.</strong> Sessions written by a newer TurboCode are no longer rewritten with data loss; they are treated as unreadable and protected from writes.</li>
+                <li><strong>Deleting the active chat.</strong> The next chat in the same mode opens, skipping archived chats, so the sidebar no longer flips between Coding and Cowork.</li>
+                <li><strong>Steering requests.</strong> Requests stay with their own conversation instead of following you into a new session, and resuming a failed or left-over request now sends it. Requests already copied into a session must be removed by hand.</li>
+                <li><strong>Interrupted turns.</strong> Interrupting a turn no longer leaves tool calls without output, which OpenAI-compatible servers rejected on the next request.</li>
+                <li><strong>Cowork sessions.</strong> The provider session is no longer rebuilt on every send, which added latency and cleared the composer’s context statistics.</li>
+                <li><strong>Large patches.</strong> A large patch can no longer hang an edit once its output fills the pipe buffer.</li>
+                <li><strong>Streaming tool calls.</strong> Servers that repeat tool-call ids and names in every stream chunk no longer produce corrupted values such as <code>call_xcall_x</code>.</li>
+            </ul>
+        </section>
+
+        <section class="changelog-section">
+            <h3>Good to know</h3>
+            <ul>
+                <li><strong>Image privacy.</strong> Image bytes are never written to disk. Stored sessions keep only an <code>[Image: name]</code> marker, and a rebuilt session replaces earlier images with a text placeholder.</li>
+                <li><strong>Configuration.</strong> <code>models.json</code> gains an optional <code>supportsVision</code> key. Existing files keep working unchanged; see <a href="{{ '/turbocode/docs/' | relative_url }}#vision">Enable image input</a>.</li>
+                <li><strong>Requirements.</strong> macOS 27.</li>
+            </ul>
+        </section>
+
+        <p class="changelog-release__footer">See the <a href="https://github.com/granvalenti76/TurboCode/blob/v0.63/CHANGELOG.md" target="_blank" rel="noopener noreferrer">full changelog for v0.63</a> and <a href="https://github.com/granvalenti76/TurboCode/compare/v0.62...v0.63" target="_blank" rel="noopener noreferrer">all changes since v0.62</a>.</p>
+    </article>
+
     <article class="changelog-release" id="release-0-62">
         <header class="changelog-release__header">
             <div>
                 <h2>0.62</h2>
-                <p>Current release · Released 11 October 2026</p>
+                <p>Previous release · Released 11 October 2026</p>
             </div>
             <a href="https://github.com/granvalenti76/TurboCode/releases/tag/v0.62" target="_blank" rel="noopener noreferrer">View release on GitHub ↗</a>
         </header>
