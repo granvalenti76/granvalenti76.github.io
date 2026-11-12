@@ -1,25 +1,142 @@
 ---
 title: "TurboCode Changelog"
-layout: project
-project_changelog: true
+layout: turbocode
+tc_page: changelog
+toc:
+  - { id: release-0-65, title: "0.65" }
+  - { id: release-0-64, title: "0.64" }
+  - { id: release-0-63, title: "0.63" }
+  - { id: release-0-62, title: "0.62" }
+  - { id: release-0-61, title: "0.61" }
+  - { id: release-0-6-0, title: "0.6.0" }
+  - { id: release-0-5-0, title: "0.5.0" }
+  - { id: release-0-4-0, title: "0.4.0" }
+  - { id: release-0-3-3, title: "0.3.3" }
+  - { id: release-0-3-2, title: "0.3.2" }
 permalink: /turbocode/changelog/
-description: Release notes and updates for TurboCode, a native open-source macOS coding agent for Swift.
+description: Release notes for TurboCode, a compact, fast agent harness for macOS written in Swift.
 ---
 
-<span id="top"></span>
 <section class="changelog-page">
     <header class="changelog-page__header">
-        <a class="changelog-page__back" href="{{ '/turbocode/' | relative_url }}">← TurboCode</a>
-        <p class="product-eyebrow">Release notes</p>
+        <div class="crumb">turbocode / changelog</div>
         <h1>Changelog</h1>
-        <p>Changes to the native macOS coding agent for Swift.</p>
+        <p>What changed in TurboCode, release by release.</p>
     </header>
+
+    <article class="changelog-release" id="release-0-65">
+        <header class="changelog-release__header">
+            <div>
+                <h2>0.65</h2>
+                <p>Current release · Released 12 November 2026</p>
+            </div>
+            <a href="https://github.com/granvalenti76/TurboCode/releases/tag/v0.65" target="_blank" rel="noopener noreferrer">View release on GitHub ↗</a>
+        </header>
+
+        <p class="changelog-release__summary">TurboCode 0.65 sets itself up on first launch, lets you follow and steer a working model without interrupting it, gives Studio bundled skills for pages, documents, and decks, and introduces a calmer visual language.</p>
+
+        <div class="changelog-release__facts">
+            <span>First-launch setup</span>
+            <span>Progress answers</span>
+            <span>Steering between tool rounds</span>
+            <span>Studio skills</span>
+            <span>Terracotta accent</span>
+        </div>
+
+        <section class="changelog-section">
+            <h3>Features</h3>
+            <ul>
+                <li><strong>First-launch setup.</strong> TurboCode looks for a model server on the Mac (llama-server, LM Studio, Ollama, vLLM, Jan) or at an address you type for another machine. It reads the context window and vision support from llama-server, checks tool calls in the background, and writes <code>~/.turbocode/models.json</code> only when you choose <strong>Create and Start</strong>. Other servers ask for a context window.</li>
+                <li><strong>Ask how it’s going.</strong> A short progress question asked while a model is busy no longer reaches that model. The on-device model answers it in a card above the composer from the live reasoning, text, and tool calls. Anything uncertain is queued as steering, and the card offers <strong>Send to Model</strong>.</li>
+                <li><strong>Steering between tool rounds.</strong> Steering sent during a turn now reaches native models between tool rounds instead of waiting for the turn to end. <strong>Send Now</strong> still interrupts. Codex and the on-device model keep end-of-turn delivery.</li>
+                <li><strong>Live Transcript.</strong> The Transcript sheet has a <strong>Live</strong> view that shows tool calls while they stream, with their arguments split into fields, a warning after three identical calls in a row, and a <strong>Stop Turn</strong> button.</li>
+                <li><strong>Current date.</strong> The model is told the date in the first message of a conversation and again when the day changes.</li>
+                <li><strong>Studio skills.</strong> Three bundled skills, loaded only when needed: <code>studio-web-design</code> for pages and HTML reports, <code>studio-documents</code> for printable documents, and <code>studio-presentations</code> for slide decks. Documents and decks are written as HTML and printed to PDF with the VM’s Chromium. A user skill with the same name replaces the bundled one.</li>
+                <li><strong>Studio prompt principles.</strong> Work from what was observed, answer in the chat when that is enough, and look at a deliverable before calling it finished.</li>
+                <li><strong>Artifacts library.</strong> One card per session, with the main file as thumbnail and every other file in the detail view. HTML artifacts are rendered for their thumbnails, so dark pages and single-page apps no longer appear blank.</li>
+                <li><strong>Composer.</strong> Coding names the active workspace beside the branch, or offers <strong>Choose workspace…</strong>. In Studio, <strong>Share a folder</strong> moved into the composer, and <strong>Review &amp; Export</strong> appears as a tinted button only while files are waiting.</li>
+                <li><strong>New visual language.</strong> A terracotta accent, serif display titles, shared surfaces for canvas, composer, and cards, and a choice between a translucent and a solid sidebar in <strong>Settings → General → Appearance</strong>.</li>
+            </ul>
+        </section>
+
+        <section class="changelog-section">
+            <h3>Fixes</h3>
+            <ul>
+                <li><strong>Fast switching.</strong> Switching conversations quickly could save one conversation with another’s blocks. Context changes now run one at a time.</li>
+                <li><strong>Refused sends.</strong> A send refused by the runtime is reported, and the text returns to the composer instead of vanishing.</li>
+                <li><strong>Double steering.</strong> Pressing Return twice while steering was being submitted no longer queues the same message twice.</li>
+                <li><strong>Unknown workers.</strong> A delegation to an unknown worker returns a readable refusal listing the valid workers, instead of ending the turn and possibly printing the coordinator’s prompt.</li>
+                <li><strong>Menus.</strong> The app no longer shows two <strong>View</strong> menus, and the Artifacts library refreshes on its own after an export review.</li>
+            </ul>
+        </section>
+
+        <section class="changelog-section">
+            <h3>Good to know</h3>
+            <ul>
+                <li><strong>Configuration.</strong> <code>models.json</code> is no longer written with a default entry on first launch, and an existing file is never overwritten. See <a href="{{ '/turbocode/docs/' | relative_url }}#first-launch">First launch</a>.</li>
+                <li><strong>Prompt cache.</strong> The date note is added only to the model-facing text of a user message, so the system prompt and its cached prefix are unchanged.</li>
+                <li><strong>Accent colour.</strong> An accent colour chosen in System Settings still takes precedence.</li>
+            </ul>
+        </section>
+
+        <p class="changelog-release__footer">See the <a href="https://github.com/granvalenti76/TurboCode/blob/v0.65/CHANGELOG.md" target="_blank" rel="noopener noreferrer">full changelog for v0.65</a> and <a href="https://github.com/granvalenti76/TurboCode/compare/v0.64...v0.65" target="_blank" rel="noopener noreferrer">all changes since v0.64</a>.</p>
+    </article>
+
+    <article class="changelog-release" id="release-0-64">
+        <header class="changelog-release__header">
+            <div>
+                <h2>0.64</h2>
+                <p>Previous release · Released 10 November 2026</p>
+            </div>
+            <a href="https://github.com/granvalenti76/TurboCode/releases/tag/v0.64" target="_blank" rel="noopener noreferrer">View release on GitHub ↗</a>
+        </header>
+
+        <p class="changelog-release__summary">TurboCode 0.64 turns Cowork into Studio: a home view that says what the mode is for, an Artifacts library with live previews of servers running in the VM, image viewing inside the VM, and built-in connectors that let one session work with another app on the Mac.</p>
+
+        <div class="changelog-release__facts">
+            <span>Cowork → Studio</span>
+            <span>Artifacts library</span>
+            <span>Live previews</span>
+            <span><code>vm_view_image</code></span>
+            <span>Connectors</span>
+        </div>
+
+        <section class="changelog-section">
+            <h3>Features</h3>
+            <ul>
+                <li><strong>Studio.</strong> Cowork is now called Studio in the sidebar switch, Settings, the composer badge, error messages, and the documentation. Existing sessions open unchanged.</li>
+                <li><strong>Studio home.</strong> A new Studio session opens on a home view with four capability cards and up to three recent artifacts. A card writes a starter into the composer without replacing what you typed, and an artifact opens the session that made it. The home view never starts the VM.</li>
+                <li><strong>Vision inside the VM.</strong> Studio models with vision can look at images inside the VM with <code>vm_view_image</code>, such as a screenshot they rendered or a picture they downloaded. PNG, JPEG, GIF, and WebP files up to 10 MB are accepted.</li>
+                <li><strong>Artifacts library.</strong> A sidebar item opens a grid of the files each session placed in <code>/out</code>, with thumbnails and a full-size preview. A toolbar button shows the active session’s artifacts in the inspector beside the chat. Copying to the Mac still goes through Review &amp; Export.</li>
+                <li><strong>Live previews.</strong> Servers the agent left running in the VM appear as a live page in the inspector. A server must listen on <code>0.0.0.0</code> on a port from 1024 up to be reachable from the Mac. Opening the inspector never boots or restarts the VM.</li>
+                <li><strong>Connectors.</strong> A connector lets a session use another app’s own MCP operations on <code>127.0.0.1</code>. It is enabled per session from the new <strong>Connectors</strong> page or the Studio home, and is off by default.</li>
+                <li><strong>Prassitele.</strong> The first connector. Its images reach models with vision, and it offers the <code>prassitele-sculpting</code> skill.</li>
+            </ul>
+        </section>
+
+        <section class="changelog-section">
+            <h3>Fixes</h3>
+            <ul>
+                <li><strong>Servers in Studio.</strong> The Studio prompt no longer tells the model to stop every server it starts; it points you to the Artifacts panel and keeps pages worth saving in <code>/out</code>.</li>
+            </ul>
+        </section>
+
+        <section class="changelog-section">
+            <h3>Good to know</h3>
+            <ul>
+                <li><strong>Consent.</strong> Enabling a connector for a session is the consent for its calls. Delegated workers and Codex never receive connectors. Safari keeps its global switch and stays Coding-only.</li>
+                <li><strong>Names.</strong> Settings keys, the <code>~/.turbocode/cowork/</code> folder, and the <code>vm_*</code> tool names keep the Cowork name; renaming them would need a session migration.</li>
+            </ul>
+        </section>
+
+        <p class="changelog-release__footer">See the <a href="https://github.com/granvalenti76/TurboCode/blob/v0.64/CHANGELOG.md" target="_blank" rel="noopener noreferrer">full changelog for v0.64</a> and <a href="https://github.com/granvalenti76/TurboCode/compare/v0.63...v0.64" target="_blank" rel="noopener noreferrer">all changes since v0.63</a>.</p>
+    </article>
 
     <article class="changelog-release" id="release-0-63">
         <header class="changelog-release__header">
             <div>
                 <h2>0.63</h2>
-                <p>Current release · Released 8 November 2026</p>
+                <p>Previous release · Released 8 November 2026</p>
             </div>
             <a href="https://github.com/granvalenti76/TurboCode/releases/tag/v0.63" target="_blank" rel="noopener noreferrer">View release on GitHub ↗</a>
         </header>

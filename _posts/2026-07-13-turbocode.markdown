@@ -1,6 +1,17 @@
 ---
 title: "TurboCode"
 layout: turbocode
+tc_page: overview
+toc:
+  - { id: overview, title: Overview }
+  - { id: install, title: Install }
+  - { id: first-launch, title: First launch }
+  - { id: coding, title: Coding }
+  - { id: studio, title: Studio }
+  - { id: models, title: Models }
+  - { id: safety, title: Safety }
+  - { id: extend, title: Extending }
+  - { id: releases, title: Releases }
 date: 2026-07-13
 image: /assets/images/turbocode/studio-home.png
 projects: true

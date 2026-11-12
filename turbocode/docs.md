@@ -1,67 +1,24 @@
 ---
 title: "TurboCode Documentation"
-layout: project
-project_docs: true
+layout: turbocode
+tc_page: docs
+toc:
+  - { id: get-started, title: Get started }
+  - { id: workflow, title: Workflow }
+  - { id: features, title: Main features }
+  - { id: local-server, title: Local LLM server }
+  - { id: configuration, title: Configuration files }
+  - { id: safety, title: Safety and privacy }
+  - { id: troubleshooting, title: Troubleshooting }
 permalink: /turbocode/docs/
 description: Install TurboCode, learn the session workflow and main features, and set up a local LLM server with llama-server.
 ---
 
-<span id="top"></span>
-<a class="docs-skip" href="#docs-content">Skip to documentation</a>
 <div class="docs-page">
-    <nav class="docs-toc" aria-label="On this page">
-        <p>On this page</p>
-        <ol>
-            <li>
-                <a href="#get-started">Get started</a>
-                <ol>
-                    <li><a href="#requirements">Requirements</a></li>
-                    <li><a href="#install">Install</a></li>
-                    <li><a href="#backends">Choose a backend</a></li>
-                </ol>
-            </li>
-            <li>
-                <a href="#workflow">Workflow</a>
-                <ol>
-                    <li><a href="#session">A session, step by step</a></li>
-                    <li><a href="#steering">Steer a running task</a></li>
-                    <li><a href="#better-requests">Better requests</a></li>
-                </ol>
-            </li>
-            <li>
-                <a href="#features">Main features</a>
-                <ol>
-                    <li><a href="#profiles">Profiles and tools</a></li>
-                    <li><a href="#instructions">AGENTS and Skills</a></li>
-                    <li><a href="#review">Review and Git</a></li>
-                    <li><a href="#xcode">Xcode and SwiftPM</a></li>
-                    <li><a href="#delegation">Delegation</a></li>
-                    <li><a href="#routing">Dynamic routing</a></li>
-                    <li><a href="#images">Image input</a></li>
-                    <li><a href="#cowork">Cowork</a></li>
-                    <li><a href="#plugins">TypeScript plugins</a></li>
-                </ol>
-            </li>
-            <li>
-                <a href="#local-server">Local LLM server</a>
-                <ol>
-                    <li><a href="#server-setup">Setup</a></li>
-                    <li><a href="#server-flags">Useful options</a></li>
-                    <li><a href="#vision">Enable image input</a></li>
-                    <li><a href="#other-servers">Server on your LAN</a></li>
-                </ol>
-            </li>
-            <li><a href="#configuration">Configuration files</a></li>
-            <li><a href="#safety">Safety and privacy</a></li>
-            <li><a href="#troubleshooting">Troubleshooting</a></li>
-        </ol>
-    </nav>
-
-    <div class="docs-content" id="docs-content" tabindex="-1">
         <header class="docs-header">
-            <p class="product-eyebrow">Documentation · Version 0.63</p>
+            <div class="crumb">turbocode / documentation · version 0.65</div>
             <h1>Using TurboCode</h1>
-            <p class="docs-header__lead">Install the app, connect a model, and run your first task on an Xcode or Swift Package Manager project.</p>
+            <p class="docs-header__lead">Install the app, connect a model, and run your first task in Coding or Studio.</p>
             <div class="docs-paths">
                 <a href="#install"><strong>New here?</strong>Install the app and pick a backend.</a>
                 <a href="#local-server"><strong>Running a local model?</strong>Set up <code>llama-server</code> in six steps.</a>
@@ -77,7 +34,7 @@ description: Install TurboCode, learn the session workflow and main features, an
                 <li>macOS 27.</li>
                 <li>Optional: Xcode 27 and Swift 6, only if you ask TurboCode to write Swift programs and use its Swift-specific tools.</li>
                 <li>Optional: Node.js 24 or later for TypeScript plugins.</li>
-                <li>Optional: a Mac with Apple silicon and about 2.2 GB of free space for Cowork.</li>
+                <li>Optional: a Mac with Apple silicon and about 2.2 GB of free space for Studio.</li>
             </ul>
             <p>For Swift work, install the full Xcode suite: the Command Line Tools alone are not enough for these tools, even with a standalone Swift package. Open Xcode once to accept its license and install any requested components, then check the active toolchain:</p>
             <pre tabindex="0" aria-label="Terminal commands"><code>xcodebuild -version
@@ -91,7 +48,15 @@ xcode-select -p</code></pre>
             <p>To update or remove it later:</p>
             <pre tabindex="0" aria-label="Terminal commands"><code>brew upgrade --cask turbocode
 brew uninstall --cask turbocode</code></pre>
-            <p>On first launch, onboarding creates your configuration in <code>~/.turbocode/</code>.</p>
+            <h3 id="first-launch">First launch</h3>
+            <p>When <code>~/.turbocode/models.json</code> is missing, TurboCode opens a setup sheet instead of writing a default configuration:</p>
+            <ol>
+                <li><strong>Welcome.</strong> <strong>Set Up Later</strong> closes the sheet without writing anything, and it returns on the next launch.</li>
+                <li><strong>Discovery.</strong> TurboCode looks for a model server on this Mac (llama-server, LM Studio, Ollama, vLLM, Jan) and at any address you type under <strong>Another machine</strong>.</li>
+                <li><strong>Review.</strong> For llama-server, the context window and vision support are read from the server. For other servers, choose the context window the model was loaded with. A short test checks tool calls; the result is shown but does not block setup.</li>
+            </ol>
+            <figure><img src="/assets/images/turbocode/onboarding-server.png" alt="TurboCode first-launch step that found a llama-server on the local network"><figcaption>Discovery found a llama-server on the local network.</figcaption></figure>
+            <p><strong>Create and Start</strong> writes <code>models.json</code> with the chosen server as the <code>llama</code> entry. An existing file is never overwritten, and every value stays editable in Settings.</p>
 
             <h3 id="backends">Choose a backend</h3>
             <p>The backend can change between profiles. The workspace, conversation, tools, and review stay in TurboCode. The composer lists On-device, Codex, Llama, and DeepSeek, followed by your custom profiles.</p>
@@ -117,7 +82,7 @@ brew uninstall --cask turbocode</code></pre>
             <ol class="docs-steps">
                 <li>
                     <h4>Choose a workspace</h4>
-                    <p>Select the folder that contains your Xcode project, Xcode workspace, or Swift package. Project tools stay inside this folder.</p>
+                    <p>Select the folder you want to work in: any repository, an Xcode project, or a Swift package. Project tools stay inside this folder.</p>
                 </li>
                 <li>
                     <h4>Pick a profile</h4>
@@ -149,13 +114,14 @@ brew uninstall --cask turbocode</code></pre>
                         <tr><th scope="col">Control</th><th scope="col">What it does</th></tr>
                     </thead>
                     <tbody>
-                        <tr><th scope="row">Return or Queue</th><td>Holds your instruction and delivers it at the next safe point.</td></tr>
+                        <tr><th scope="row">Return or Queue</th><td>Holds your instruction and delivers it at the next safe point. Native models receive it between tool rounds; Codex and the on-device model at the end of the turn.</td></tr>
                         <tr><th scope="row">Send now</th><td>Delivers queued instructions immediately when the backend allows it. Otherwise TurboCode interrupts the turn in a controlled way and continues.</td></tr>
                         <tr><th scope="row">Stop</th><td>Cancels the current requests and any delegated workers at once.</td></tr>
                     </tbody>
                 </table>
             </div>
-            <p>Pending requests and delivery problems stay visible in the steering panel until they are resolved. Each request stays with its own conversation.</p>
+            <p>Pending requests and delivery problems stay visible in the steering queue above the composer until they are resolved. Each request stays with its own conversation.</p>
+            <p>To check on a long run, ask a short question such as “how is it going?”. It does not reach the working model: the on-device model answers in a card above the composer from the live reasoning, text, and tool calls. To watch tool calls as they stream, open the <strong>Transcript</strong> and choose <strong>Live</strong>.</p>
 
             <h3 id="better-requests">Better requests</h3>
             <ul>
@@ -217,7 +183,7 @@ Summarize user-visible changes first, then list fixes.</code></pre>
                 <li><strong>Xcode ACP agent</strong> makes TurboCode available inside Xcode. In Coding Intelligence settings, choose <strong>Add an ACP Agent</strong>, name it <code>TurboCode</code>, set the executable to the path below, and leave the interpreter empty.</li>
             </ul>
             <pre tabindex="0" aria-label="ACP helper path"><code>/Applications/TurboCode.app/Contents/Helpers/turbocode-acp</code></pre>
-            <p>Apple on-device does not receive Xcode build or test tools. See the <a href="https://github.com/granvalenti76/TurboCode/blob/v0.63/ACP_AGENT_SETUP.md" target="_blank" rel="noopener noreferrer">ACP setup guide ↗</a> for the full procedure.</p>
+            <p>Apple on-device does not receive Xcode build or test tools. See the <a href="https://github.com/granvalenti76/TurboCode/blob/v0.65/ACP_AGENT_SETUP.md" target="_blank" rel="noopener noreferrer">ACP setup guide ↗</a> for the full procedure.</p>
 
             <h3 id="delegation">Delegation: Coordinator → Worker</h3>
             <p>A capable model can plan a task and hand subtasks to a smaller local model, which keeps frontier usage down while the coordinator stays responsible for the final answer.</p>
@@ -240,20 +206,31 @@ Summarize user-visible changes first, then list fixes.</code></pre>
             <p>Drop PNG, JPEG, HEIC, WebP, GIF, or TIFF files on the main view to add them to the composer, up to four images of 20 MB each. This works with Llama-server and Apple on-device models that support vision. Otherwise, a brief notice appears and the image is not added.</p>
             <p>Images are resized to at most 1568 px on the longest edge and are never written to disk. To use them with a local server, see <a href="#vision">Enable image input</a>.</p>
 
-            <h3 id="cowork">Cowork</h3>
-            <p>Cowork is a second mode for work beyond Swift: web apps, Python scripts, documents, rendered pages, and screenshots. It runs in an isolated Debian 12 virtual machine with Node.js 24, Python 3.11, and headless Chromium.</p>
-            <p>Cowork is turned off by default, so its switch does not appear in the sidebar until you enable it and the installation finishes.</p>
+            <h3 id="studio">Studio</h3>
+            <p>Studio is a second mode for work beyond the repository: web pages and apps, Python scripts, data, documents, and slide decks. It runs in an isolated Debian 12 virtual machine on Apple Containerization, with Node.js 24, Python 3.11, and headless Chromium.</p>
+            <p>Studio is turned off by default, so its switch does not appear in the sidebar until you enable it and the installation finishes.</p>
             <ol>
-                <li>Open <strong>Settings › Cowork</strong> and turn on <strong>Enable Cowork</strong>. TurboCode downloads the Linux image, about 760 MB, and uses about 2.2 GB of disk space.</li>
-                <li>When the image is ready, the <strong>Coding | Cowork</strong> switch appears at the top of the sidebar. Choose <strong>Cowork</strong>, then start a new chat.</li>
-                <li>Optionally, share one Mac folder from the toolbar. The VM sees it read-only at <code>/work</code>.</li>
-                <li>When results are ready in <code>/out</code>, choose <strong>Review &amp; Export</strong>. Nothing reaches your Mac until you approve it.</li>
+                <li>Open <strong>Settings › Studio</strong> and turn on <strong>Enable Studio</strong>. TurboCode downloads the Linux image, about 760 MB, uses about 2.2 GB of disk space, and verifies the guest with a self-test.</li>
+                <li>When the image is ready, the <strong>Coding | Studio</strong> switch appears at the top of the sidebar. Choose <strong>Studio</strong>, then start a new chat. The home view offers cards for web pages, data, documents, and your files; a card writes a starter prompt into the composer.</li>
+                <li>Optionally, choose <strong>Share a folder</strong> in the composer. The VM sees it read-only at <code>/work</code>.</li>
+                <li>When results are ready in <code>/out</code>, choose <strong>Review &amp; Export</strong>. It lists every file and shows diffs for conflicts. Nothing reaches your Mac until you approve it, and exported files are not executable and carry the quarantine attribute.</li>
             </ol>
-            <p>Cowork works with the on-device, Llama, and DeepSeek profiles. Codex runs its own shell on the Mac, so it is not available in Cowork. Images you drop reach only the model; the VM can open them only if they are also in the shared folder.</p>
+            <figure><img src="/assets/images/turbocode/studio-home.png" alt="TurboCode Studio home with capability cards, connectors, and composer"></figure>
+            <p><strong>Artifacts.</strong> The <strong>Artifacts</strong> item in the sidebar collects what every session placed in <code>/out</code>, one card per session. The inspector beside the chat shows the session’s files and opens servers the agent left running as a live page. A server must listen on <code>0.0.0.0</code> on a port from 1024 up to be reachable from the Mac.</p>
+            <p><strong>Vision.</strong> Models with vision can look at images inside the VM, such as a screenshot of a page they just built. Images you drop in the chat reach only the model; the VM can open them only if they are also in the shared folder.</p>
+            <p><strong>Skills.</strong> Studio bundles <code>studio-web-design</code>, <code>studio-documents</code>, and <code>studio-presentations</code>, loaded only when needed. Documents and decks are printed to PDF with the VM’s Chromium. A user skill with the same name replaces the bundled one.</p>
+            <p>Studio works with the on-device, Llama, and DeepSeek profiles. Codex runs its own shell on the Mac, so it is not available in Studio.</p>
+
+            <h3 id="connectors">Connectors</h3>
+            <p>A connector lets a session work with another app on your Mac through that app’s own MCP server on <code>127.0.0.1</code>. Connectors are off by default and are enabled one session at a time from <strong>Connectors</strong> in the sidebar or from the Studio home; enabling one is the consent for its calls. Delegated workers and Codex never receive them.</p>
+            <ul>
+                <li><strong>Prassitele</strong> blocks out and adjusts sculptures in the running Prassitele app. Its rendered views reach models with vision. Available in Coding and Studio.</li>
+                <li><strong>Safari</strong> opens pages, reads them, clicks, and types through <code>safaridriver</code>. Coding only, with a single switch in <strong>Settings → Agents</strong>.</li>
+            </ul>
 
             <h3 id="plugins">TypeScript plugins</h3>
             <p>Plugins add typed tools and custom response widgets. Each one is a Node.js project built with <code>@granvalenti/turbocode-sdk</code>, and it runs as a separate process. TurboCode keeps control of approvals, workspace access, timeouts, and process lifecycle.</p>
-            <p>Installed plugins live in <code>~/.turbocode/plugins/&lt;plugin-id&gt;/</code>. Run <code>/reload</code> after a change. See the <a href="https://github.com/granvalenti76/TurboCode/blob/v0.63/TurboCode/Documentation/turbocode-typescript-plugins.md" target="_blank" rel="noopener noreferrer">plugin guide ↗</a> and the <a href="https://github.com/granvalenti76/TurboCode/blob/v0.63/TurboCodeSDK/README.md" target="_blank" rel="noopener noreferrer">SDK reference ↗</a>.</p>
+            <p>Installed plugins live in <code>~/.turbocode/plugins/&lt;plugin-id&gt;/</code>. Run <code>/reload</code> after a change. See the <a href="https://github.com/granvalenti76/TurboCode/blob/v0.65/TurboCode/Documentation/turbocode-typescript-plugins.md" target="_blank" rel="noopener noreferrer">plugin guide ↗</a> and the <a href="https://github.com/granvalenti76/TurboCode/blob/v0.65/TurboCodeSDK/README.md" target="_blank" rel="noopener noreferrer">SDK reference ↗</a>.</p>
         </section>
 
         <section class="docs-section" id="local-server" aria-labelledby="local-server-title">
@@ -271,7 +248,7 @@ Summarize user-visible changes first, then list fixes.</code></pre>
                 </li>
                 <li>
                     <h4>Get a model</h4>
-                    <p>Download a GGUF model whose chat template supports tool calling, sized for your Mac’s memory. A capable MoE model such as Qwen3.6-35B-A3B is recommended when your hardware can run it comfortably.</p>
+                    <p>Download a GGUF model whose chat template supports tool calling, sized for your Mac’s memory. Qwen3.6-35B-A3B or better is recommended when your hardware can run it comfortably.</p>
                 </li>
                 <li>
                     <h4>Start the server</h4>
@@ -290,7 +267,7 @@ Summarize user-visible changes first, then list fixes.</code></pre>
                 </li>
                 <li>
                     <h4>Check the TurboCode endpoint</h4>
-                    <p>The default endpoint is <code>http://127.0.0.1:8080/v1</code>, so with the command above there is nothing to change. If you use a different port or context size, edit the <code>llama</code> entry in <code>~/.turbocode/models.json</code>:</p>
+                    <p>If <code>models.json</code> does not exist yet, the <a href="#first-launch">first-launch setup</a> finds the server for you. Otherwise, the default endpoint is <code>http://127.0.0.1:8080/v1</code>, so with the command above there is nothing to change. If you use a different port or context size, edit the <code>llama</code> entry in <code>~/.turbocode/models.json</code>:</p>
                     <pre tabindex="0" aria-label="Part of the llama entry in models.json"><code>{
   "id": "llama",
   "provider": "openAICompatible",
@@ -323,7 +300,7 @@ Summarize user-visible changes first, then list fixes.</code></pre>
                     </tbody>
                 </table>
             </div>
-            <p>A configuration tested with TurboCode on small and medium-sized projects uses <code>Qwen3.6-35B-A3B-UD-IQ2_XXS.gguf</code>, with a 132K context window and Q4 KV cache.</p>
+            <p>A configuration tested with TurboCode on small and medium-sized projects uses <code>Qwen3.6-35B-A3B-UD-IQ2_XXS.gguf</code>, with a 132K context window and Q4 KV cache. On a MacBook with M4 and 16 GB of memory, the dense <code>Qwen3.8-27B-GSQ-RCO-IQ2_XS.gguf</code> with a q8 KV cache runs at about 10 tokens per second.</p>
             <p>Reasoning is left to the server by default. To send a token budget with each request instead, change the model in <strong>Settings → Reasoning</strong>, but only if the endpoint’s chat template supports those fields.</p>
 
             <h3 id="vision">Enable image input</h3>
@@ -371,11 +348,11 @@ Summarize user-visible changes first, then list fixes.</code></pre>
                         <tr><th scope="row"><code>profiles.json</code></th><td>Your custom model profiles.</td></tr>
                         <tr><th scope="row"><code>sessions/</code></th><td>Saved conversations.</td></tr>
                         <tr><th scope="row"><code>plugins/</code></th><td>Installed TypeScript plugins.</td></tr>
-                        <tr><th scope="row"><code>cowork/</code></th><td>The Cowork VM. Remove it with <strong>Remove Cowork…</strong> in Settings; your sessions are kept.</td></tr>
+                        <tr><th scope="row"><code>cowork/</code></th><td>The Studio VM (the folder keeps its earlier name). Remove it with <strong>Remove Studio…</strong> in Settings; your sessions are kept.</td></tr>
                     </tbody>
                 </table>
             </div>
-            <p>If you edit a file by hand, choose <strong>Reload Configuration</strong> in the Agents settings or relaunch the app. TurboCode never overwrites a file it cannot validate; it shows the error so you can correct it. See the <a href="https://github.com/granvalenti76/TurboCode/blob/v0.63/CONFIGURATION.md" target="_blank" rel="noopener noreferrer">full configuration reference ↗</a>.</p>
+            <p>If you edit a file by hand, choose <strong>Reload Configuration</strong> in the Agents settings or relaunch the app. TurboCode never overwrites a file it cannot validate; it shows the error so you can correct it. See the <a href="https://github.com/granvalenti76/TurboCode/blob/v0.65/CONFIGURATION.md" target="_blank" rel="noopener noreferrer">full configuration reference ↗</a>.</p>
         </section>
 
         <section class="docs-section" id="safety" aria-labelledby="safety-title">
@@ -385,7 +362,7 @@ Summarize user-visible changes first, then list fixes.</code></pre>
                 <li>Operations that discard work, rewrite history, delete files, or publish consequential remote changes need your approval, according to the configured policy.</li>
                 <li>Apple on-device inference stays on your Mac. Llama inference stays on the machine that runs the server: your Mac or a private server on your network. Remote requests go only to the backend you select.</li>
                 <li>Credentials are stored in the macOS Keychain. Diagnostics exclude prompts, generated source, file contents, and workspace paths.</li>
-                <li>Cowork commands run only in the VM, with no fallback to the Mac shell. No API keys or Mac environment variables enter the VM.</li>
+                <li>Studio commands run only in the VM, with no fallback to the Mac shell. No API keys or Mac environment variables enter the VM.</li>
             </ul>
             <div class="docs-note docs-note--warning">
                 <p>TurboCode is experimental software and should not be treated as a security boundary. Review generated changes and Git operations before you publish them.</p>
@@ -421,5 +398,4 @@ Summarize user-visible changes first, then list fixes.</code></pre>
             </dl>
             <p>Still stuck? <a href="https://github.com/granvalenti76/TurboCode/issues" target="_blank" rel="noopener noreferrer">Open an issue on GitHub ↗</a>.</p>
         </section>
-    </div>
 </div>
