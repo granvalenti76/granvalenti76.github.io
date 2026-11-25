@@ -16,7 +16,7 @@ date: 2026-07-13
 image: /assets/images/turbocode/studio-home.png
 projects: true
 star: true
-featured: true
+featured: false
 tag:
   - swift
   - swiftui

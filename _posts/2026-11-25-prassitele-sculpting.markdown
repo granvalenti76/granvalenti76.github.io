@@ -10,6 +10,7 @@ tag:
   - open source
   - artificial intelligence
 star: false
+featured: true
 category: blog
 author: granvalenti
 description: A fast, no-frills digital sculpting app that handles meshes beyond 10 million polygons without lag, with a built-in MCP server for working alongside AI agents.
